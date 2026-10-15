@@ -1,6 +1,6 @@
 <?php
 /**
- * Services page sections shared by the Services archive and single Service.
+ * Services archive page only; all editable fields come from sa_*.
  *
  * Markup deliberately includes NO site header, navigation or footer.
  *
@@ -11,8 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $id         = absint( $args['post_id'] ?? 0 );
 $prefix     = (string) ( $args['prefix'] ?? 'sa_' );
-$mode       = (string) ( $args['mode'] ?? 'archive' );
-$is_single  = 'single' === $mode;
+$mode       = 'archive';
 $cards      = isset( $args['cards'] ) && is_array( $args['cards'] ) ? $args['cards'] : array();
 $pagination = $args['pagination'] ?? '';
 
@@ -23,21 +22,17 @@ $read = static function ( $name, $default = '' ) use ( $id, $prefix ) {
         ? $default : $value;
 };
 $archive_title = $id ? get_the_title( $id ) : __( 'Services', 'theoct' );
-if ( ! $is_single && ( 'Services Archive' === $archive_title || ! $archive_title ) ) {
+if ( 'Services Archive' === $archive_title || ! $archive_title ) {
     $archive_title = __( 'Services', 'theoct' );
 }
 $hero_title = (string) $read( 'hero_title', $archive_title );
-$intro_fallback = $is_single
-    ? theoct_services_meta( $id, 'service_intro', get_the_excerpt( $id ) )
-    : ( $id && get_post_field( 'post_content', $id )
-        ? wp_strip_all_tags( get_post_field( 'post_content', $id ) )
-        : theoct_services_meta( $id, 'archive_subtitle', __( 'We design, build, and deploy AI-powered workflows that automate operations and connect core systems.', 'theoct' ) ) );
+$intro_fallback = $id && get_post_field( 'post_content', $id )
+    ? wp_strip_all_tags( get_post_field( 'post_content', $id ) )
+    : __( 'We design, build, and deploy AI-powered workflows that automate operations and connect core systems.', 'theoct' );
 $hero_desc = (string) $read( 'hero_description', $intro_fallback );
-$hero_cta = $read( 'hero_cta', array() );
-$visual = $read( 'visual_image', $is_single
-    ? theoct_services_meta( $id, 'service_hero_image', get_post_thumbnail_id( $id ) )
-    : theoct_services_meta( $id, 'archive_banner_image', get_post_thumbnail_id( $id ) ) );
-$section_label = $is_single ? __( 'Our approach', 'theoct' ) : __( 'Our deliverables', 'theoct' );
+$hero_cta  = $read( 'hero_cta', array() );
+$visual    = $read( 'visual_image', $id ? get_post_thumbnail_id( $id ) : 0 );
+$section_label = __( 'Our deliverables', 'theoct' );
 
 $defaults = array(
     array( 'group_title' => __( 'Data & Reporting', 'theoct' ), 'items' => array(
@@ -60,18 +55,6 @@ $defaults = array(
     ) ),
 );
 $groups = theoct_services_rows( $read( 'deliverable_groups', $defaults ) );
-if ( $is_single ) {
-    $legacy = theoct_services_rows( theoct_services_meta( $id, 'service_benefits', array() ) );
-    if ( $legacy && ! metadata_exists( 'post', $id, (string) get_option( 'theoct_fields_storage_prefix', 'theoct_' ) . $prefix . 'deliverable_groups' ) ) {
-        $items = array();
-        foreach ( $legacy as $benefit ) {
-            if ( ! empty( $benefit['benefit'] ) ) {
-                $items[] = array( 'item' => $benefit['benefit'] );
-            }
-        }
-        $groups = array( array( 'group_title' => __( 'Benefits', 'theoct' ), 'items' => $items ) );
-    }
-}
 $process = theoct_services_rows( $read( 'process_steps', array(
     array( 'step_label' => 'STEP 01', 'step_title' => __( 'Discovery & Success Criteria', 'theoct' ),
         'step_description' => __( 'We map your current workflows, identify bottlenecks, and define clear metrics for success.', 'theoct' ) ),
@@ -82,19 +65,6 @@ $process = theoct_services_rows( $read( 'process_steps', array(
     array( 'step_label' => 'STEP 04', 'step_title' => __( 'Launch + Monitor + Iterate', 'theoct' ),
         'step_description' => __( 'Go live confidently, monitor performance, and improve based on real results.', 'theoct' ) ),
 ) ) );
-if ( $is_single ) {
-    $old_process = theoct_services_rows( theoct_services_meta( $id, 'service_process', array() ) );
-    if ( $old_process && ! metadata_exists( 'post', $id, (string) get_option( 'theoct_fields_storage_prefix', 'theoct_' ) . $prefix . 'process_steps' ) ) {
-        $process = array();
-        foreach ( $old_process as $i => $step ) {
-            $process[] = array(
-                'step_label'       => sprintf( 'STEP %02d', $i + 1 ),
-                'step_title'       => $step['step_title'] ?? '',
-                'step_description' => $step['step_description'] ?? '',
-            );
-        }
-    }
-}
 $project_bullets = theoct_services_rows( $read( 'project_bullets', array(
     array( 'item' => __( 'Automating internal workflows', 'theoct' ) ),
     array( 'item' => __( 'Automated reporting and dashboards', 'theoct' ) ),
@@ -103,7 +73,7 @@ $project_bullets = theoct_services_rows( $read( 'project_bullets', array(
     array( 'item' => __( 'AI assistants for internal business teams', 'theoct' ) ),
     array( 'item' => __( 'Cross-system workflow automation', 'theoct' ) ),
 ) ) );
-$cta = $read( 'bottom_cta_link', $is_single ? theoct_services_meta( $id, 'service_cta_link', array() ) : array() );
+$cta = $read( 'bottom_cta_link', array() );
 ?>
 <main id="oct-content" class="oct-services" role="main">
     <section class="oct-hero">
@@ -132,9 +102,6 @@ $cta = $read( 'bottom_cta_link', $is_single ? theoct_services_meta( $id, 'servic
         <div class="oct-container">
             <p class="oct-eyebrow"><?php echo esc_html( (string) $read( 'deliverables_eyebrow', $section_label ) ); ?></p>
             <h2><?php echo esc_html( (string) $read( 'deliverables_title', __( 'What we help automate', 'theoct' ) ) ); ?></h2>
-            <?php if ( $is_single && get_post_field( 'post_content', $id ) ) : ?>
-                <div class="oct-section-summary oct-rich"><?php echo wp_kses_post( apply_filters( 'the_content', get_post_field( 'post_content', $id ) ) ); ?></div>
-            <?php endif; ?>
             <div class="oct-deliverable-grid">
                 <?php foreach ( $groups as $group ) : ?>
                     <div class="oct-deliverable-col">
@@ -155,7 +122,7 @@ $cta = $read( 'bottom_cta_link', $is_single ? theoct_services_meta( $id, 'servic
     <section class="oct-section oct-core" id="services-list">
         <div class="oct-container">
             <p class="oct-eyebrow"><?php echo esc_html( (string) $read( 'cards_eyebrow', __( 'What we do', 'theoct' ) ) ); ?></p>
-            <h2><?php echo esc_html( (string) $read( 'cards_title', $is_single ? __( 'What this service includes', 'theoct' ) : __( 'Our core automation services', 'theoct' ) ) ); ?></h2>
+            <h2><?php echo esc_html( (string) $read( 'cards_title', __( 'Our core automation services', 'theoct' ) ) ); ?></h2>
             <p class="oct-section-summary"><?php echo esc_html( (string) $read( 'cards_description', __( 'From workflow automation to system integration, we deliver outcomes that move your business forward.', 'theoct' ) ) ); ?></p>
             <?php if ( $cards ) : ?>
                 <div class="oct-card-grid">
@@ -190,9 +157,7 @@ $cta = $read( 'bottom_cta_link', $is_single ? theoct_services_meta( $id, 'servic
                     </nav>
                 <?php endif; ?>
             <?php else : ?>
-                <p class="oct-empty"><?php echo esc_html( $is_single
-                    ? __( 'Add capability cards in the Service fields to populate this section.', 'theoct' )
-                    : __( 'Published Services will appear here as cards.', 'theoct' ) ); ?></p>
+                <p class="oct-empty"><?php esc_html_e( 'Published Services will appear here as cards.', 'theoct' ); ?></p>
             <?php endif; ?>
         </div>
     </section>
