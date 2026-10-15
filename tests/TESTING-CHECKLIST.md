@@ -187,3 +187,14 @@ Record timestamp, WordPress/PHP/plugin/theme versions, browser and role, test ID
 - [ ] Contact form labels/choices are configurable, but do **not** submit data (admin schema only).
 - [ ] Existing `ss_` fields and old Service frontend markup/CSS are unchanged.
 - [ ] Header/footer and other CPT frontends remain untouched.
+
+## v1.0.5 — Old Service field cleanup / new template acceptance
+
+- [ ] Admin Services Archive shows **only Services Archive Sections**, not generic Archive Page Settings.
+- [ ] Other five archive editors **still show** generic Archive Page Settings.
+- [ ] Service post editor shows **only Single Service — Screenshot Detail Sections** from theme-managed groups; old Service Details and `Single Service Sections` are Draft.
+- [ ] Old Service custom-field meta remains saved in the database after updating theme (back up first).
+- [ ] Both templates render exclusively their active fields: `sa_` for archive and `ssd_` for singles.
+- [ ] Hero, banner, deliverables, process, examples, FAQ and contact sections render from current fields; repeaters survive save/reload.
+- [ ] No shared header/footer appears; other CPT frontends remain blank.
+- [ ] Contact inputs and Send button are disabled until a backend form handler is installed.

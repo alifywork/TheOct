@@ -29,3 +29,8 @@ Schema now includes **7 regular CPT definitions, 9 taxonomies and 8 field groups
 To verify: `python3 tests/check_static.py`, `php tests/test-archive-pages.php`, WordPress staging admin edit/save/reload, and the GitHub Actions workflow. Live WordPress tests must be run on a connected staging site.
 
 **Services-specific update:** Services archive now renders content in `archive-service.php` from its own Services Archive Sections fields. The private config editor remains TheOct → Archive Pages → Services. Five other archive frontend templates remain blank. For sections, see `SERVICES-SECTIONS.md`.
+
+
+### v1.0.5: Services Archive field cleanup
+
+The generic Archive Page Settings group no longer appears on the **Services** archive editing screen, because the theme excludes only that archive post ID via the plugin's visual location rules. It remains for the five other archives. Services Archive uses the dedicated **Services Archive Sections** group (`sa_`). The original `/services/` route and other archive routes are preserved. Previous stored meta values are not deleted.

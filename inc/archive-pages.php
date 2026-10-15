@@ -444,11 +444,15 @@ function theoct_archive_edit_message( $post ) {
     }
     $url = get_post_type_archive_link( $target );
     echo '<div class="notice notice-info inline"><p>';
-    printf(
-        /* translators: %s: The CPT archive name. */
-        esc_html__( 'Editing the %s archive settings. These values are stored but not yet displayed on the public frontend.', 'theoct' ),
-        esc_html( theoct_archive_targets()[ $target ] )
-    );
+    if ( 'service' === $target ) {
+        esc_html_e( 'Editing the Services Archive. Use Services Archive Sections to control its frontend; SEO metadata is stored but not yet output.', 'theoct' );
+    } else {
+        printf(
+            /* translators: %s: The CPT archive name. */
+            esc_html__( 'Editing the %s archive settings. These values are stored but not yet displayed on the public frontend.', 'theoct' ),
+            esc_html( theoct_archive_targets()[ $target ] )
+        );
+    }
     if ( $url ) {
         echo ' <a href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">';
         esc_html_e( 'Open archive URL', 'theoct' );

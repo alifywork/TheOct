@@ -1,42 +1,30 @@
-# TheOct v1.0.4 — Single Service screenshot fields
+# TheOct — Single Service screenshot fields & rendering (v1.0.5)
 
-This configuration reproduces the **editable content architecture** shown in your new Single Service screenshot. It is **not** a request to change frontend markup or CSS, so no frontend files were modified in v1.0.4.
+**Editor:** WordPress → Services → Add New / Edit Service. **Frontend:** `/services/{service-slug}/`.
 
-## WordPress editor location
+The **only theme-managed visible group** for individual Services is **Single Service — Screenshot Detail Sections** (`ssd_` prefix). It contains **81 top-level fields**, **10 tabs**, and **11 repeaters**. Older Service Details and Single Service Sections groups are set to **Draft** by the theme (not deleted); their saved field values remain untouched in the database.
 
-**Services → Add New / Edit Service → Single Service — Screenshot Detail Sections** (10 tabs). Requires your separate **TheOct Fields v1.4.0** plugin.
+| Screenshot section | What the Single Service template renders |
+|---|---|
+| 01 Hero | Page title or `ssd_hero_heading`, breadcrumb, subtitle, two CTA links and optional anchor nav |
+| 02 Blue visual | `ssd_visual_background` (and mobile variant), primary metric/value/label and extra metrics |
+| 03 Problem & standards | Problem rich text and repeatable standards checklist |
+| 04 Deliverables | Repeatable columns with nested bullet lists |
+| 05 Process | Reorderable numbered step cards and highlighted step style |
+| 06 Technology stack | Named partner/tool logos and external links |
+| 07 Automation examples | Background image, example cards with input → automation → output |
+| 08 Testimonials | Author name, role/photo and quote; **only rows with the editorial consent flag enabled are displayed** |
+| 09 FAQ | Native `<details>` accordion from `ssd_faq_items` plus linked published FAQ posts |
+| 10 Contact / discovery | Headline, blue image, checklist, phone/email and a **non-submitting** form preview |
 
-The new group has 81 top-level fields including ten tab headings, 11 repeater fields, 15 conditionally shown form settings and additional regular controls. All keys start with `ssd_` so they do not overwrite existing `ss_` fields.
+**Images and copy:** Use your own uploads and approved content. The template renders empty repeaters as empty grids/sections rather than inventing testimonials, client results or case studies.
 
-| Screenshot section | Admin tab | Editable fields |
-|---|---|---|
-| Hero (excluding site header) | 01 Hero & Section Navigation | Back link, eyebrow, headline, short intro, primary/secondary CTA, section-jump labels/anchors |
-| Blue artwork with 20–40% stat | 02 Blue Hero Visual & Results | Banner and mobile images, stat value, label, footnote, extra metrics |
-| Problem with "messy" tools | 03 Problem & Standards | Heading, WYSIWYG problem copy, standards cards with icons and descriptions |
-| What's included | 04 Deliverables | Heading, 4 suggested columns (Strategy, Build, Handoff, Support) and nested checklist bullets |
-| A process built for results | 05 Process Timeline | Intro and reorderable numbered process cards |
-| Our stack | 06 Technology Stack Logos | Technology/logo/image, website links and descriptions |
-| See what's possible | 07 Automation Examples | Blue background image, input/automation/output cards, badges and optional links |
-| What clients say | 08 Client Testimonials | Portrait, client name, role/company, testimonial and consent reminder |
-| Common questions | 09 FAQ Accordion | Question/answer repeater, default-open setting, links to existing FAQ CPT records |
-| Let's talk about your workflows | 10 Discovery Contact | Blue image, heading, benefits, phone/email, consultation form labels and dropdown choices, privacy and confirmation text |
+**No working contact handler yet:** The form's labels/options are visible, but the inputs and submit are disabled to avoid pretending that inquiries are delivered. Fields for future destination email, success/error messages and privacy policy are stored but not used for email. Ask for form integration when you want a real submission workflow.
 
-The screenshot's **site header/navbar and dark global footer are excluded**. The contact section directly above the footer is included as editable content.
+**Compatibility:** the theme still loads no shared header/footer. Other CPT templates are blank. The Services Archive keeps its independent `sa_` schema; neither its fields nor template are replaced by the Single Service screenshot.
 
-## Safe installation and existing data
+**Activation/update:** Activate TheOct Fields 1.4.0, update TheOct, then open WordPress admin as an Administrator. The new group imports once if absent. If old groups already exist, they are drafted reversibly. Take a database backup before updating because your installed schema configuration changes (although values are never deleted).
 
-After updating the theme, activate TheOct Fields v1.4.0 if necessary, then open **Services → Edit Service** as a WordPress administrator. The theme installs the single new definition from `config/single-service-detail-schema.json` once during `admin_init` if its definition key doesn't already exist. It does not overwrite existing TheOct Fields definitions, saved Service posts, Services Archive configuration, or the old `Single Service Sections` group.
+**Frontend code:** `single-service.php` → `template-parts/single-service-detail.php` with `assets/css/single-service-detail.css`. Auto-generated WordPress image HTML is escaped by core, rich text is passed through `wp_kses_post`, links use `esc_url`.
 
-If the new group is not visible immediately, reload the WordPress admin and confirm your plugin is active. With no plugin, the schema file remains in the theme but WordPress cannot render those custom field controls.
-
-## Important limitations
-
-- **Fields only:** v1.0.4 does not wire these `ssd_` values to frontend templates. The previous Single Service design and its original `ss_` fields continue functioning unchanged.
-- **Not a live contact form:** configurable labels, dropdown values, consent text and recipient address do not create form HTML, submission handling, validation, email delivery or spam protection.
-- **No invented client proof:** metrics, testimonials and logos are empty until you supply them. Demo text in field placeholders isn't evidence of a result.
-- **FAQ relationship type:** TheOct Fields v1.4.0 does not limit Relationship pickers to a particular CPT, so select only FAQ entries.
-- **Test before release:** verify nested deliverables repeaters, saved testimonial text and plugin admin tabs on your WordPress staging instance. GitHub static CI does not exercise a live WordPress editor.
-
-## Quality checks
-
-Run `python3 tests/check_static.py --plugin /path/to/theoct-fields-1.4.0.zip` to validate the screenshot group and plugin source contract. GitHub Actions runs the same static check without requiring your private plugin ZIP. Source details: `config/single-service-detail-schema.json`.
+**Local test:** static and PHP syntax in GitHub Actions; for live validation, create staging Service content and test nested repeaters, FAQs, responsive layouts, sample form preview, page IDs and permalink handling.

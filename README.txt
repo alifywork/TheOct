@@ -2,7 +2,7 @@
 Contributors: alifywork
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,9 +16,16 @@ TheOct registers seven custom post types and nine taxonomies in the WordPress da
 2. Activate TheOct.
 3. Reload the WordPress dashboard: Services, Projects, Case Studies, Industries, Teams, Pricing, and FAQs are now available.
 4. For detailed field groups, activate the separate TheOct Fields v1.4.0 plugin. In Dashboard, click Preview TheOct Fields Setup, review the import preview, and choose Apply Import.
-5. The public-facing frontend will intentionally show a blank page. Add templates later to build the site.
+5. Services Archive and Single Service render their own designs. Other CPTs and the site homepage stay blank. Shared header/footer are not added.
 
 == Changelog ==
+
+= 1.0.5 =
+* Retire the two old Service field groups as drafts, preserving saved metadata.
+* Hide shared Archive Page Settings on the Services Archive editor only; keep other archives unchanged.
+* Keep Services Archive fields (sa_) and render screenshot detail fields (ssd_) in Single Service.
+* Remove old Service fields from bundled JSON and add a dedicated Single Service responsive template.
+* No shared header/footer or non-Service frontend changes.
 
 = 1.0.4 =
 * Add screenshot-based fields exclusively to Single Service editors.
