@@ -1,6 +1,6 @@
 # TheOct's production assets
 
-These files are intentionally **not enqueued or displayed**. The WordPress theme remains blank until its frontend is built.
+**Only fonts.css is currently enqueued**, and only on the Services archive and Single Service pages. The new Services-only stylesheet is assets/css/services-pages.css. Bootstrap, GSAP and Font Awesome remain stored but are not enqueued; other frontend pages remain blank.
 
 - Bootstrap 5.3.8 — `css/bootstrap.min.css` and `js/bootstrap.bundle.min.js` (Popper included).
 - GSAP 3.15.0 — `js/gsap.min.js` and optional `js/ScrollTrigger.min.js`.

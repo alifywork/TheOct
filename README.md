@@ -1,14 +1,12 @@
 # TheOct
 
-TheOct is an **intentionally blank WordPress classic starter theme**.
-
-There is **no frontend yet**: no page layout, header, footer, menus, styling, widgets, JavaScript, posts display, or comments display. WordPress loads an empty `index.php` template that outputs nothing.
+TheOct is a lightweight WordPress classic starter theme with **editable Services landing and detail layouts**. All other public templates, including the homepage, remain intentionally blank. Shared site header and footer are not implemented.
 
 ## Included files
 
 - `style.css` — WordPress theme registration metadata only (no CSS rules).
 - `index.php` — required classic theme template (intentionally outputs nothing).
-- `functions.php` — loads WordPress content registrations and dashboard-only enhancements; enqueues no public assets.
+- `functions.php` — loads WordPress content registration, dashboard enhancements and Services-only frontend assets.
 - `comments.php` — blank comments template.
 - `screenshot.png` — blank white preview image.
 - `README.txt` — installation instructions.

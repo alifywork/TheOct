@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-TheOct is a blank-front-end classic starter theme. When activated, it automatically registers seven custom post types and nine taxonomies in the WordPress dashboard. The public frontend renders no HTML, styles, or scripts. Use the separate TheOct Fields v1.4.0 plugin for detailed custom field groups.
+TheOct registers seven custom post types and nine taxonomies in the WordPress dashboard. Services archive and individual Service pages now have responsive content sections without a shared header or footer. All other public templates remain blank. Install TheOct Fields v1.4.0 for editable custom field groups.
 
 == Installation ==
 

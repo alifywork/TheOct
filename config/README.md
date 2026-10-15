@@ -1,10 +1,10 @@
 # TheOct content model — TheOct Fields 1.4.0
 
-This repository stores the **theme template placeholders** and a **portable data-model schema** for your separate **TheOct Fields** plugin. The theme itself intentionally renders no frontend HTML, CSS or JavaScript. Existing asset files remain un-enqueued.
+This repository stores seven CPT definitions, eight base field groups and an additional separate Services layout field-group bundle for **TheOct Fields**. Services archive and single pages now render a reference-inspired layout with no shared header/footer; other CPT frontends remain blank. Only Services-specific fonts/CSS are enqueued.
 
 ## Install and register
 
-1. Install and activate the latest **TheOct theme (v1.0.2 or later)**; reload your WordPress Dashboard. **Seven CPT menus and nine taxonomies now register automatically even without the plugin.**
+1. Install and activate the latest **TheOct theme (v1.0.3 or later)**; reload your WordPress Dashboard. **Seven CPT menus and nine taxonomies now register automatically even without the plugin.**
 2. For the detailed custom fields, install and activate the separate `theoct-fields-1.4.0.zip` plugin (**requires WordPress 6.5+ and PHP 8.1+**).
 3. On the WordPress **Dashboard**, click **Preview TheOct Fields Setup**. The theme passes its bundled JSON to the plugin's own import-preview workflow. Review the 24 definitions and explicitly click **Apply Import**. Alternatively, use **TheOct Fields → Tools → Import JSON** and select the bundled `config/theoct-fields-schema.json` file.
 4. Go to **Settings → Permalinks → Save Changes** if you need to refresh existing route settings.
@@ -54,3 +54,7 @@ Industry content is modeled as the `industry` CPT, not duplicated as a project t
 
 Import updates definitions with matching keys. Export your current site schema and back up the database before importing over previously edited field groups. This theme still renders no frontend. See `FIELD-GROUPS.md` for field specifications and caveats.
 
+
+## Services-only frontend
+
+See [SERVICES-SECTIONS.md](SERVICES-SECTIONS.md) for the two extra auto-installed field groups in `config/services-layout-schema.json`. This adds seven screenshot-inspired sections to the Services archive/single pages only; it does not change other blank CPT templates or the shared header/footer.

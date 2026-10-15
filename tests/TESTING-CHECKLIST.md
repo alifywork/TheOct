@@ -1,6 +1,6 @@
 # TheOct — CPT Admin Testing & Compatibility Checklist
 
-**Scope:** TheOct classic WordPress theme and separately installed **TheOct Fields v1.4.0** plugin. The public frontend must remain deliberately blank.
+**Scope:** TheOct classic WordPress theme and separately installed **TheOct Fields v1.4.0** plugin. The public homepage and non-Service CPT templates remain deliberately blank; Services archive and single now render sections without a shared header/footer.
 
 ## 0. Safety & staging prerequisites
 
@@ -169,3 +169,12 @@ Record timestamp, WordPress/PHP/plugin/theme versions, browser and role, test ID
 - [ ] With TheOct Fields 1.4.0 active, four archive-only custom-field sections appear. Their values and conditional CTA controls save/reload.
 - [ ] Editing any archive does not change its original public URL and does not render frontend content.
 - [ ] Additional configuration posts cannot be created or deleted through the normal UI.
+
+## Services-specific frontend verification (theme v1.0.3)
+
+- [ ] Services archive and a Single Service render their seven sections without a site header/footer.
+- [ ] TheOct Fields editor shows the six Services Archive Sections tabs only on the Services archive configuration, and six Single Service Sections tabs on Service posts.
+- [ ] Saving nested deliverables, cards, steps and CTA fields correctly updates the rendered sections.
+- [ ] Archive cards show real published Service posts; single cards show the Service capability repeater.
+- [ ] Stylesheets appear only on Services routes; other CPT routes/homepage remain blank.
+- [ ] Test mobile/tablet widths and uploaded image replacements in staging.
