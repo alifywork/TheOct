@@ -16,7 +16,7 @@ const ENABLED = process.env.WP_E2E_STAGING === '1' && !!BASE && !!USER && !!PASS
 test.skip(!ENABLED, 'Requires WP_E2E_STAGING=1 and staging WordPress credentials');
 
 const types = {
-    service: { tabs: 4, taxonomy: 'service_category' },
+    service: { tabs: 10, taxonomy: 'service_category' },
     project: { tabs: 4, taxonomy: 'project_category' },
     case_study: { tabs: 5, taxonomy: 'case_study_category' },
     industry: { tabs: 4, taxonomy: 'industry_category' },

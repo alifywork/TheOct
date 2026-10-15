@@ -36,7 +36,7 @@ if ( defined( 'THEOCT_FIELDS_VERSION' ) ) {
 }
 
 $theoct_types = array(
-    'service'    => array( 'services', true, 4 ),
+    'service'    => array( 'services', true, 10 ),
     'project'    => array( 'projects', true, 4 ),
     'case_study' => array( 'case-studies', true, 5 ),
     'industry'   => array( 'industries', true, 4 ),
@@ -64,7 +64,9 @@ foreach ( $theoct_types as $slug => $expected ) {
             'posts_per_page' => 1,
             'fields'         => 'ids',
             'meta_key'       => '_theoct_definition_key',
-            'meta_value'     => 'theoct_field_group_' . $slug,
+            'meta_value'     => 'service' === $slug
+                ? 'theoct_field_group_single_service_detail_reference'
+                : 'theoct_field_group_' . $slug,
         )
     );
     $theoct_assert( count( $groups ) === 1, "{$slug}: imported field group exists" );

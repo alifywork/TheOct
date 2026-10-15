@@ -305,6 +305,8 @@ $faq_posts = (array) $read( 'faq_related_posts', array() );
                     <?php endforeach; ?>
                 </ul>
                 <div class="oct-detail-contact-options">
+                    <?php $show_text( $read( 'contact_location' ), 'oct-detail-small' ); ?>
+                    <?php $show_text( $read( 'contact_minutes' ), 'oct-detail-small' ); ?>
                     <?php if ( $read( 'contact_phone' ) ) : ?>
                         <a href="<?php echo esc_url( 'tel:' . preg_replace( '/[^0-9+]/', '', (string) $read( 'contact_phone' ) ) ); ?>"><?php echo esc_html( (string) $read( 'contact_phone' ) ); ?></a>
                     <?php endif; ?>
@@ -318,17 +320,18 @@ $faq_posts = (array) $read( 'faq_related_posts', array() );
                     <?php $show_text( $read( 'form_intro' ), 'oct-detail-small' ); ?>
                     <div class="oct-detail-form-preview" aria-label="<?php esc_attr_e( 'Contact form preview (not accepting submissions)', 'theoct' ); ?>">
                         <?php foreach ( array(
-                            'form_name_label', 'form_phone_label', 'form_email_label',
-                            'form_company_label',
-                        ) as $control ) :
-                            $label = $read( $control );
-                            if ( ! $label ) { continue; }
+                            'form_name_label' => __( 'Name', 'theoct' ),
+                            'form_phone_label' => __( 'Phone', 'theoct' ),
+                            'form_email_label' => __( 'Business Email', 'theoct' ),
+                            'form_company_label' => __( 'Company Name', 'theoct' ),
+                        ) as $control => $fallback ) :
+                            $label = $read( $control, $fallback );
                             ?>
                             <label><?php echo esc_html( (string) $label ); ?><input type="text" placeholder="<?php echo esc_attr( (string) $label ); ?>" disabled></label>
                         <?php endforeach; ?>
                         <?php $service_options = $rows( 'form_service_options' ); ?>
-                        <?php if ( $read( 'form_service_label' ) ) : ?>
-                            <label><?php echo esc_html( (string) $read( 'form_service_label' ) ); ?>
+                        <?php if ( $read( 'form_service_label', __( 'Service', 'theoct' ) ) ) : ?>
+                            <label><?php echo esc_html( (string) $read( 'form_service_label', __( 'Service', 'theoct' ) ) ); ?>
                                 <select disabled>
                                     <option value=""><?php esc_html_e( 'Select', 'theoct' ); ?></option>
                                     <?php foreach ( $service_options as $opt ) : ?>
@@ -337,8 +340,8 @@ $faq_posts = (array) $read( 'faq_related_posts', array() );
                                 </select>
                             </label>
                         <?php endif; ?>
-                        <?php if ( $read( 'form_message_label' ) ) : ?>
-                            <label class="oct-detail-form-wide"><?php echo esc_html( (string) $read( 'form_message_label' ) ); ?><textarea rows="4" disabled></textarea></label>
+                        <?php if ( $read( 'form_message_label', __( 'Message', 'theoct' ) ) ) : ?>
+                            <label class="oct-detail-form-wide"><?php echo esc_html( (string) $read( 'form_message_label', __( 'Message', 'theoct' ) ) ); ?><textarea rows="4" disabled></textarea></label>
                         <?php endif; ?>
                         <div class="oct-detail-form-wide">
                             <button type="button" class="oct-button" disabled><?php echo esc_html( (string) $read( 'form_submit_label', __( 'Send message', 'theoct' ) ) ); ?></button>

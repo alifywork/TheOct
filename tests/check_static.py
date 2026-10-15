@@ -106,7 +106,7 @@ def inspect_schema():
     check(bundle.get("schema_version") == 1, "Schema version must be 1")
     check(bundle.get("plugin_version") == "1.4.0", "Schema must target plugin 1.4.0")
     definitions = bundle.get("definitions", [])
-    check(len(definitions) == 24, "Expected 7 CPTs + 9 taxonomies + 8 field groups")
+    check(len(definitions) == 23, "Expected 7 CPTs + 9 taxonomies + 7 active base field groups")
     definition_keys = [d.get("definition_key") for d in definitions]
     check(len(definition_keys) == len(set(definition_keys)), "Duplicate definition keys")
     typed = {}
@@ -124,7 +124,8 @@ def inspect_schema():
             groups[names[0]] = d
     check(set(posts) == set(CPTS), "CPT slug set differs from expected seven")
     check(set(taxes) == set(TAXONOMIES), "Taxonomy slug set differs from expected nine")
-    check(set(groups) == (set(CPTS) | {"theoct_archive"}), "Expected seven CPT field groups and archive settings group")
+    check(set(groups) == ((set(CPTS) - {"service"}) | {"theoct_archive"}),
+          "Legacy Service group must not ship in the core schema")
     if "theoct_archive" in groups:
         archive = groups["theoct_archive"]["meta"]
         fields = archive.get("_theoct_fields") or []
@@ -236,15 +237,15 @@ def inspect_blank_frontend():
     if extra.is_file():
         specialized = json.loads(extra.read_text(encoding="utf-8"))
         definitions = specialized.get("definitions", [])
-        check(len(definitions) == 2, "Require two Service-only field groups")
+        check(len(definitions) == 1, "Only the Services Archive group should remain in this bundle")
         targets = sorted([tuple(d.get("meta", {}).get("_theoct_location_post_types", []))
                           for d in definitions])
-        check(targets == [("service",), ("theoct_archive",)],
-              "Field groups must target Service and private archive records")
+        check(targets == [("theoct_archive",)],
+              "Old ss_ Single Service field group must not be included")
         for definition in definitions:
             fields = definition.get("meta", {}).get("_theoct_fields", [])
             check(sum(f.get("type") == "tab" for f in fields) == 6,
-                  "Each Services layout requires six editor tabs")
+                  "Services Archive layout requires six editor tabs")
             inspect_fields(fields, definition.get("slug", "services"))
     detail = ROOT / "config" / "single-service-detail-schema.json"
     check(detail.is_file(), "Missing screenshot-specific Single Service fields bundle")
@@ -275,6 +276,40 @@ def inspect_blank_frontend():
                            "ssd_testimonials", "ssd_faq_items", "ssd_contact_heading",
                            "ssd_form_service_options"):
                 check(needed in names, "Missing screenshot field " + needed)
+    legacy_retirement = ROOT / "inc" / "service-field-retirement.php"
+    check(legacy_retirement.is_file(), "Missing reversible legacy Service field retirement")
+    if legacy_retirement.is_file():
+        retirement = legacy_retirement.read_text(encoding="utf-8")
+        for old_key in ("theoct_field_group_service",
+                        "theoct_field_group_services_single_sections"):
+            check(old_key in retirement, "Legacy field group not retired: " + old_key)
+        check("'post_status' => 'draft'" in retirement,
+              "Old fields must be retired by draft, never deleted")
+        check("'operator' => '!=' " in retirement or "'operator' => '!='" in retirement,
+              "Shared Archive group must exclude only the Services archive")
+        check("wp_delete_post" not in retirement and "delete_post_meta" not in retirement,
+              "Retirement must not destroy saved data")
+    single_template = ROOT / "template-parts" / "single-service-detail.php"
+    check(single_template.is_file(), "Missing new screenshot-specific Single Service template")
+    if single_template.is_file():
+        code = single_template.read_text(encoding="utf-8")
+        for section in ("oct-detail-hero", "oct-detail-visual", "oct-detail-problem",
+                        "oct-detail-deliverables", "oct-detail-process", "oct-detail-stack",
+                        "oct-detail-examples", "oct-detail-testimonials", "oct-detail-faq",
+                        "oct-detail-contact"):
+            check(section in code, "Missing Single Service section " + section)
+        check("ssd_" in code and "'ss_" not in code,
+              "Single Service frontend must only use screenshot fields")
+        check("get_header(" not in code and "get_footer(" not in code,
+              "Single Service must not load the header or footer")
+    archive_template = ROOT / "template-parts" / "services-layout.php"
+    if archive_template.is_file():
+        code = archive_template.read_text(encoding="utf-8")
+        check("service_intro" not in code and "service_benefits" not in code
+              and "archive_subtitle" not in code and "service_process" not in code,
+              "Services Archive must not use removed field names")
+    check((ROOT / "assets/css/single-service-detail.css").is_file(),
+          "Missing Single Service responsive CSS")
     if service_module.is_file():
         code = service_module.read_text(encoding="utf-8")
         check("theoct_services_install_single_detail_fields" in code,
