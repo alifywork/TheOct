@@ -27,3 +27,7 @@ The separate **TheOct Fields 1.4.0** plugin can import the content model stored 
 ## WordPress dashboard editing
 
 The theme includes **admin-only** tabs, editing checklists, list summaries and taxonomy filters for the seven TheOct Fields content types. No frontend assets or markup are activated. See [config/ADMIN-WORKFLOW.md](config/ADMIN-WORKFLOW.md).
+
+## Compatibility tests
+
+Read [tests/TESTING-CHECKLIST.md](tests/TESTING-CHECKLIST.md) for static CI checks, the read-only WP-CLI smoke test, optional staging-only Playwright tests and the manual WordPress matrix. The theme's frontend is deliberately blank.

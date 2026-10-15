@@ -1,0 +1,13 @@
+{
+  "name": "theoct-admin-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Optional staging-only tests for TheOct WordPress CPT admin experience.",
+  "scripts": {
+    "test:static": "python3 tests/check_static.py",
+    "test:admin": "playwright test -c tests/e2e/playwright.config.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
