@@ -1,0 +1,131 @@
+/**
+ * TheOct self-hosted fonts: Montserrat, Outfit and Poppins.
+ * Not automatically loaded: the WordPress theme still renders a blank frontend.
+ * All @font-face assets below are lightweight Latin-subset WOFF2 files.
+ */
+ 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+ 
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-montserrat-regular: "Montserrat", sans-serif;
+  --font-montserrat-regular-weight: 400;
+  --font-montserrat-medium: "Montserrat", sans-serif;
+  --font-montserrat-medium-weight: 500;
+  --font-montserrat-semibold: "Montserrat", sans-serif;
+  --font-montserrat-semibold-weight: 600;
+  --font-montserrat-bold: "Montserrat", sans-serif;
+  --font-montserrat-bold-weight: 700;
+  --font-outfit: "Outfit", sans-serif;
+  --font-outfit-regular: "Outfit", sans-serif;
+  --font-outfit-regular-weight: 400;
+  --font-outfit-medium: "Outfit", sans-serif;
+  --font-outfit-medium-weight: 500;
+  --font-outfit-semibold: "Outfit", sans-serif;
+  --font-outfit-semibold-weight: 600;
+  --font-outfit-bold: "Outfit", sans-serif;
+  --font-outfit-bold-weight: 700;
+  --font-poppins: "Poppins", sans-serif;
+  --font-poppins-regular: "Poppins", sans-serif;
+  --font-poppins-regular-weight: 400;
+  --font-poppins-medium: "Poppins", sans-serif;
+  --font-poppins-medium-weight: 500;
+  --font-poppins-semibold: "Poppins", sans-serif;
+  --font-poppins-semibold-weight: 600;
+  --font-poppins-bold: "Poppins", sans-serif;
+  --font-poppins-bold-weight: 700;
+}
