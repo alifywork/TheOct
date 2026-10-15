@@ -4,6 +4,8 @@
 ( function () {
     'use strict';
 
+    document.documentElement.classList.add( 'js' );
+
     var toggle = document.querySelector( '.menu-toggle' );
     var navigation = document.querySelector( '.primary-navigation' );
 

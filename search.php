@@ -16,7 +16,7 @@ get_header();
                 printf(
                     /* translators: %s: user-provided search terms. */
                     esc_html__( 'Results for: %s', 'theoct' ),
-                    '<span>' . esc_html( get_search_query() ) . '</span>'
+                    esc_html( get_search_query() )
                 );
                 ?>
             </h1>

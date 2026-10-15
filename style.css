@@ -173,6 +173,9 @@ input[type="submit"]:hover, .search-submit:hover, .button:hover { background: va
 .footer-navigation ul { display: flex; list-style: none; gap: 1rem; margin: 0; padding: 0; flex-wrap: wrap; }
 .footer-navigation a { text-decoration: none; font-size: .85rem; }
 
+/* Keep long-form reading widths comfortable. */
+.page .singular-entry { max-width: 900px; margin-inline: auto; }
+
 /* 8. Responsive layouts */
 @media (max-width: 960px) {
   .content-grid.has-sidebar { grid-template-columns: minmax(0, 1fr) 240px; gap: 2rem; }
@@ -181,9 +184,11 @@ input[type="submit"]:hover, .search-submit:hover, .button:hover { background: va
 }
 @media (max-width: 760px) {
   .header-inner { min-height: 76px; flex-wrap: wrap; gap: .8rem; padding-block: .8rem; }
-  .menu-toggle { display: inline-block; margin-left: auto; }
-  .primary-navigation { display: none; flex-basis: 100%; width: 100%; }
-  .primary-navigation.is-open { display: block; }
+  .menu-toggle { margin-left: auto; }
+  .js .menu-toggle { display: inline-block; }
+  .primary-navigation { display: block; flex-basis: 100%; width: 100%; }
+  .js .primary-navigation { display: none; }
+  .js .primary-navigation.is-open { display: block; }
   .primary-navigation .menu-list { display: block; padding: .5rem 0; }
   .primary-navigation a { width: 100%; padding: .7rem .4rem; }
   .primary-navigation .sub-menu { display: block; position: static; padding: 0 0 0 1rem; box-shadow: none; border: 0; }
