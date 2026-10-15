@@ -289,7 +289,13 @@ function theoct_admin_render_guide( $post ) {
         } elseif ( 'faq_category' === $field ) {
             $filled = has_term( '', 'faq_category', $post->ID );
         } else {
-            $filled = theoct_admin_filled( theoct_admin_field_value( $post->ID, $field ) );
+            $saved_value = theoct_admin_field_value( $post->ID, $field );
+            // Empty media and Post Object controls store 0, not an empty string.
+            if ( in_array( $field, array( 'team_headshot', 'related_project' ), true ) ) {
+                $filled = is_numeric( $saved_value ) && (int) $saved_value > 0;
+            } else {
+                $filled = theoct_admin_filled( $saved_value );
+            }
         }
         if ( $filled ) {
             ++$done;
