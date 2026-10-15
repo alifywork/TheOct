@@ -178,3 +178,12 @@ Record timestamp, WordPress/PHP/plugin/theme versions, browser and role, test ID
 - [ ] Archive cards show real published Service posts; single cards show the Service capability repeater.
 - [ ] Stylesheets appear only on Services routes; other CPT routes/homepage remain blank.
 - [ ] Test mobile/tablet widths and uploaded image replacements in staging.
+
+## Single Service screenshot fields (v1.0.4)
+
+- [ ] **Services → Edit** displays `Single Service — Screenshot Detail Sections` with 10 tabs.
+- [ ] Only Service CPT records show the new screenshot group; **TheOct → Archive Pages → Services** does not.
+- [ ] Nested deliverables checklist, process, tech logos, example cards, testimonials and FAQ repeater values persist after saving.
+- [ ] Contact form labels/choices are configurable, but do **not** submit data (admin schema only).
+- [ ] Existing `ss_` fields and old Service frontend markup/CSS are unchanged.
+- [ ] Header/footer and other CPT frontends remain untouched.

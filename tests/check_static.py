@@ -246,6 +246,41 @@ def inspect_blank_frontend():
             check(sum(f.get("type") == "tab" for f in fields) == 6,
                   "Each Services layout requires six editor tabs")
             inspect_fields(fields, definition.get("slug", "services"))
+    detail = ROOT / "config" / "single-service-detail-schema.json"
+    check(detail.is_file(), "Missing screenshot-specific Single Service fields bundle")
+    if detail.is_file():
+        detail_bundle = json.loads(detail.read_text(encoding="utf-8"))
+        definitions = detail_bundle.get("definitions", [])
+        check(len(definitions) == 1, "Only one new Single Service field group should exist")
+        if len(definitions) == 1:
+            definition = definitions[0]
+            fields = definition.get("meta", {}).get("_theoct_fields", [])
+            check(definition.get("definition_key") == "theoct_field_group_single_service_detail_reference",
+                  "Single Service group key changed")
+            check(definition.get("type") == "theoct_field_group", "Screenshot group must be a field group")
+            check(definition.get("meta", {}).get("_theoct_location_post_types") == ["service"],
+                  "Screenshot fields must target Service CPT only, not an archive")
+            check(definition.get("meta", {}).get("_theoct_show_in_rest") in (False, 0),
+                  "Screenshot-specific fields must not be exposed through REST")
+            check(len(fields) == 81, "Single Service screenshot field count changed")
+            check(sum(f.get("type") == "tab" for f in fields) == 10,
+                  "Single Service screenshot requires ten editor sections")
+            check(all(f.get("name", "").startswith("ssd_") for f in fields),
+                  "Screenshot fields must use isolated ssd_ keys")
+            inspect_fields(fields, "single_service_detail")
+            names = {f.get("name") for f in fields}
+            for needed in ("ssd_hero_heading", "ssd_metric_primary_value",
+                           "ssd_problem_heading", "ssd_deliverable_columns",
+                           "ssd_process_steps", "ssd_stack_logos", "ssd_example_cards",
+                           "ssd_testimonials", "ssd_faq_items", "ssd_contact_heading",
+                           "ssd_form_service_options"):
+                check(needed in names, "Missing screenshot field " + needed)
+    if service_module.is_file():
+        code = service_module.read_text(encoding="utf-8")
+        check("theoct_services_install_single_detail_fields" in code,
+              "Missing automatic but non-overwriting Single Service group installation")
+        check("DefinitionIO::findByDefinitionKey( $group_key )" in code,
+              "Single Service installer must not overwrite user-modified groups")
 
 
 def inspect_plugin(plugin_path):
