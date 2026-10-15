@@ -22,11 +22,11 @@ function theoct_admin_content_types() {
         'service'    => array(
             'placeholder' => 'Enter the service name',
             'taxonomy'    => 'service_category',
-            'summary'     => 'service_subtitle',
+            'summary'     => 'ssd_hero_description',
             'checklist'   => array(
                 array( 'title', 'Service title' ),
-                array( 'service_intro', 'Service introduction' ),
-                array( 'service_benefits', 'Benefits' ),
+                array( 'ssd_hero_description', 'Hero introduction' ),
+                array( 'ssd_deliverable_columns', 'Deliverables' ),
             ),
         ),
         'project'    => array(
@@ -85,11 +85,11 @@ function theoct_admin_content_types() {
         'theoct_archive' => array(
             'placeholder' => 'Enter the archive page heading',
             'taxonomy'    => '',
-            'summary'     => 'archive_subtitle',
+            'summary'     => 'sa_hero_description',
             'checklist'   => array(
                 array( 'title', 'Archive heading' ),
                 array( 'content', 'Archive description' ),
-                array( 'archive_subtitle', 'Short subtitle (optional)' ),
+                array( 'sa_hero_title', 'Hero heading (optional)' ),
             ),
         ),
         'faq'        => array(

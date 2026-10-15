@@ -25,3 +25,8 @@ if ( is_admin() ) {
 
 // Only Service archive/detail pages get a designed frontend; all others remain blank.
 require_once get_template_directory() . '/inc/services-pages.php';
+
+// Reversibly hide obsolete Services groups, preserving existing saved data.
+if ( is_admin() ) {
+    require_once get_template_directory() . '/inc/service-field-retirement.php';
+}

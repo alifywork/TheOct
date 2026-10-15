@@ -20,7 +20,11 @@ function theoct_services_assets() {
     }
     $version = wp_get_theme()->get( 'Version' );
     wp_enqueue_style( 'theoct-service-fonts', get_theme_file_uri( '/assets/css/fonts.css' ), array(), $version );
-    wp_enqueue_style( 'theoct-service-pages', get_theme_file_uri( '/assets/css/services-pages.css' ), array( 'theoct-service-fonts' ), $version );
+    if ( is_post_type_archive( 'service' ) ) {
+        wp_enqueue_style( 'theoct-service-pages', get_theme_file_uri( '/assets/css/services-pages.css' ), array( 'theoct-service-fonts' ), $version );
+    } else {
+        wp_enqueue_style( 'theoct-single-service-detail', get_theme_file_uri( '/assets/css/single-service-detail.css' ), array( 'theoct-service-fonts' ), $version );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'theoct_services_assets' );
 add_action( 'after_setup_theme', static function () { add_theme_support( 'title-tag' ); } );
@@ -90,7 +94,7 @@ function theoct_services_archive_cards() {
     while ( have_posts() ) {
         the_post();
         $id = get_the_ID();
-        $summary = theoct_services_meta( $id, 'service_intro', '' );
+        $summary = theoct_services_meta( $id, 'ssd_hero_description', '' );
         if ( ! is_string( $summary ) || '' === trim( $summary ) ) {
             $summary = get_the_excerpt();
         }
@@ -100,32 +104,6 @@ function theoct_services_archive_cards() {
             'url'         => get_permalink(),
             'image'       => has_post_thumbnail() ? get_post_thumbnail_id() : theoct_services_meta( $id, 'service_hero_image', 0 ),
             'icon'        => theoct_services_meta( $id, 'service_icon', '' ),
-        );
-    }
-    return $cards;
-}
-
-/**
- * Service singles may use a dedicated repeatable capabilities-card list;
- * existing Service Features rows remain a compatible fallback.
- */
-function theoct_services_single_cards( $id, $prefix ) {
-    $rows = theoct_services_rows( theoct_services_meta( $id, $prefix . 'capability_cards', array() ) );
-    if ( ! $rows ) {
-        $rows = theoct_services_rows( theoct_services_meta( $id, 'service_features', array() ) );
-    }
-    $cards = array();
-    foreach ( $rows as $row ) {
-        $title = (string) ( $row['card_title'] ?? $row['feature'] ?? '' );
-        if ( '' === trim( $title ) ) {
-            continue;
-        }
-        $cards[] = array(
-            'title'       => $title,
-            'description' => (string) ( $row['card_description'] ?? $row['details'] ?? '' ),
-            'image'       => $row['card_image'] ?? 0,
-            'icon'        => $row['card_icon'] ?? '',
-            'url'         => '',
         );
     }
     return $cards;
