@@ -131,7 +131,9 @@ function theoct_admin_field_value( $post_id, $field_name ) {
  * Add a small preview and a human-readable editorial summary.
  */
 function theoct_admin_columns( $columns ) {
-    $type = isset( $_GET['post_type'] ) ? sanitize_key( wp_unslash( $_GET['post_type'] ) ) : '';
+    $type = isset( $_GET['post_type'] ) && is_string( $_GET['post_type'] )
+        ? sanitize_key( wp_unslash( $_GET['post_type'] ) )
+        : '';
     if ( ! isset( theoct_admin_content_types()[ $type ] ) ) {
         return $columns;
     }
@@ -236,7 +238,7 @@ function theoct_admin_taxonomy_filter( $post_type, $which = 'top' ) {
 function theoct_admin_title_placeholder( $placeholder, $post ) {
     $config = theoct_admin_content_types();
     return isset( $config[ $post->post_type ] )
-        ? __( $config[ $post->post_type ]['placeholder'], 'theoct' )
+        ? $config[ $post->post_type ]['placeholder']
         : $placeholder;
 }
 

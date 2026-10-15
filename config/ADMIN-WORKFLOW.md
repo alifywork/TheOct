@@ -1,10 +1,10 @@
 # TheOct — WordPress CPT Admin Workflow
 
-TheOct has **admin-only** enhancements for content types registered by your separate **TheOct Fields v1.4.0** plugin. These do not register the post types themselves; import the schema from \`config/theoct-fields-schema.json\` first.
+TheOct has **admin-only** enhancements for content types registered by your separate **TheOct Fields v1.4.0** plugin. These do not register the post types themselves; import the schema from `config/theoct-fields-schema.json` first.
 
 ## Edit screen
 
-- The plugin's existing section markers (\`tab\` fields) become keyboard-accessible, clickable **editor tabs** when JavaScript runs.
+- The plugin's existing section markers (`tab` fields) become keyboard-accessible, clickable **editor tabs** when JavaScript runs.
 - Each section includes a count of its top-level editing controls.
 - **Show all sections** temporarily expands every section when you need to review/copy content at once.
 - Keyboard navigation: left/right arrows, Home and End. Focus is visible. Without JavaScript, every field is displayed in the plugin's original layout.
@@ -26,13 +26,13 @@ TheOct has **admin-only** enhancements for content types registered by your sepa
 
 - Featured-image thumbnails are shown only for CPTs that support WordPress thumbnails.
 - Terms in the primary taxonomy can filter each list screen using WordPress's native query.
-- Teams, Pricing and FAQs are ordered by the WordPress **Order** (\`menu_order\`) value, then title, unless the editor chooses another column sort. WordPress's **Page Attributes → Order** field is where that value is edited.
+- Teams, Pricing and FAQs are ordered by the WordPress **Order** (`menu_order`) value, then title, unless the editor chooses another column sort. WordPress's **Page Attributes → Order** field is where that value is edited.
 - Other available taxonomy columns are still handled by TheOct Fields.
 
 ## Supported & compatible
 
-- TheOct Fields 1.4.0 already renders \`tab\` types as section headings. The theme adds interaction through \`assets/admin/cpt-editor.js\` and \`assets/admin/cpt-editor.css\`.
-- The theme checks that \`THEOCT_FIELDS_VERSION\` exists and the expected CPT is registered.
+- TheOct Fields 1.4.0 already renders `tab` types as section headings. The theme adds interaction through `assets/admin/cpt-editor.js` and `assets/admin/cpt-editor.css`.
+- The theme checks that `THEOCT_FIELDS_VERSION` exists and the expected CPT is registered.
 - **Nothing is loaded on the public frontend.** All existing archive and single templates remain blank.
 - The plugin is not modified and is not bundled into the theme; its version and future DOM changes may require updates to this small admin enhancement.
 - This update doesn't require re-importing fields if your site already has the previous seven groups. It improves the editor presentation around them.
