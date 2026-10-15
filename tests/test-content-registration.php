@@ -65,7 +65,7 @@ function flush_rewrite_rules() {
 require get_template_directory() . '/inc/content-types.php';
 
 $schema = theoct_schema_bundle();
-theoct_test_assert( count( $schema['definitions'] ?? array() ) === 23, 'Read the bundled schema with 23 definitions' );
+theoct_test_assert( count( $schema['definitions'] ?? array() ) === 24, 'Read the bundled schema with 24 definitions' );
 theoct_test_assert(
     in_array( array( 'theoct_register_content_types', 12 ), $GLOBALS['theoct_test_actions']['init'] ?? array(), true ),
     'Content type registration executes at init priority 12 after the plugin'
