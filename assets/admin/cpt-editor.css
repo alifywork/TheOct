@@ -1,0 +1,134 @@
+/**
+ * TheOct CPT editing enhancements — WP admin ONLY, never enqueued publicly.
+ */
+#theoct-fields-content .theoct-admin-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 14px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dcdcde;
+}
+
+#theoct-fields-content .theoct-admin-tabs {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+#theoct-fields-content .theoct-admin-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 7px 11px;
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 5px;
+    color: #1d2327;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#theoct-fields-content .theoct-admin-tab:hover {
+    background: #edf2fa;
+    border-color: #8c8f94;
+}
+
+#theoct-fields-content .theoct-admin-tab[aria-selected="true"] {
+    color: #135e96;
+    border-color: #2271b1;
+    background: #f0f6fc;
+}
+
+#theoct-fields-content .theoct-admin-tab:focus-visible,
+#theoct-fields-content .theoct-admin-show-all:focus-visible {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+#theoct-fields-content .theoct-admin-tab-count {
+    min-width: 20px;
+    padding: 0 5px;
+    border-radius: 12px;
+    background: #e2e4e7;
+    color: #50575e;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+}
+
+#theoct-fields-content .theoct-admin-section {
+    padding: 1px 0 18px;
+}
+
+#theoct-fields-content .theoct-admin-section-heading {
+    font-size: 15px;
+    font-weight: 650;
+    margin: 0 0 15px;
+    color: #1d2327;
+}
+
+#theoct-fields-content [hidden] {
+    display: none !important;
+}
+
+.theoct-editor-checklist {
+    margin: 12px 0;
+}
+.theoct-editor-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+.theoct-editor-checklist .dashicons {
+    font-size: 17px;
+    width: 18px;
+    height: 18px;
+}
+.theoct-guide-done .dashicons {
+    color: #008a20;
+}
+.theoct-guide-todo .dashicons {
+    color: #787c82;
+}
+.theoct-guide-progress {
+    font-weight: 650;
+    margin: 8px 0 14px;
+}
+.column-theoct_preview {
+    width: 74px;
+}
+.column-theoct_details {
+    width: 170px;
+}
+.theoct-admin-thumbnail {
+    display: block;
+    max-width: 52px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+}
+.theoct-admin-muted {
+    color: #787c82;
+}
+@media (max-width: 782px) {
+    #theoct-fields-content .theoct-admin-toolbar {
+        display: block;
+    }
+    #theoct-fields-content .theoct-admin-show-all {
+        margin-top: 10px;
+    }
+    .column-theoct_details {
+        width: auto;
+    }
+}

@@ -23,3 +23,7 @@ Version: 1.0.0 · License: GPL-2.0-or-later.
 ## Custom content types (not activated by the theme)
 
 The separate **TheOct Fields 1.4.0** plugin can import the content model stored at `config/theoct-fields-schema.json`. It defines Services, Projects, Case Studies, Industries, Teams, Pricing, and FAQs, their taxonomies, and field groups. For import instructions and template names, see [config/README.md](config/README.md). The existing frontend remains intentionally blank.
+
+## WordPress dashboard editing
+
+The theme includes **admin-only** tabs, editing checklists, list summaries and taxonomy filters for the seven TheOct Fields content types. No frontend assets or markup are activated. See [config/ADMIN-WORKFLOW.md](config/ADMIN-WORKFLOW.md).
