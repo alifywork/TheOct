@@ -27,3 +27,5 @@ The internal `theoct_archive` post type is registered with `public=false`, `publ
 Schema now includes **7 regular CPT definitions, 9 taxonomies and 8 field groups**: 24 definitions. The original seven groups continue to use reviewed plugin import; the new archive-only group is created automatically if needed.
 
 To verify: `python3 tests/check_static.py`, `php tests/test-archive-pages.php`, WordPress staging admin edit/save/reload, and the GitHub Actions workflow. Live WordPress tests must be run on a connected staging site.
+
+**Services-specific update:** Services archive now renders content in `archive-service.php` from its own Services Archive Sections fields. The private config editor remains TheOct → Archive Pages → Services. Five other archive frontend templates remain blank. For sections, see `SERVICES-SECTIONS.md`.

@@ -18,7 +18,7 @@ There is **no frontend yet**: no page layout, header, footer, menus, styling, wi
 
 Download this repository as a ZIP and upload it in WordPress under **Appearance → Themes → Add New → Upload Theme**, or copy the files to `wp-content/themes/theoct/`. Activate **TheOct**. The site frontend will intentionally be blank until templates are implemented.
 
-Version: 1.0.2 · License: GPL-2.0-or-later.
+Version: 1.0.3 · License: GPL-2.0-or-later.
 
 ## Dashboard menus — automatically enabled
 
@@ -39,3 +39,9 @@ The theme includes **admin-only** tabs, editing checklists, list summaries and t
 ## Compatibility tests
 
 Read [tests/TESTING-CHECKLIST.md](tests/TESTING-CHECKLIST.md) for static CI checks, the read-only WP-CLI smoke test, optional staging-only Playwright tests and the manual WordPress matrix. The theme's frontend is deliberately blank.
+
+## Services landing-page sections (without header/footer)
+
+The **Services archive** (`/services/`) and **Single Service** (`/services/{slug}/`) now render seven responsive, screenshot-inspired sections: Hero, dark visual band, deliverables, service/capability cards, industries & typical projects, process, and final CTA. The archive cards use real published Service posts; single capability cards use their own repeater. These two pages intentionally **have no site header or footer**, as requested. Every other archive/single/frontend template stays blank.
+
+Install and activate TheOct Fields v1.4.0 to get two additive field groups: **Services Archive Sections** (only the Services Archive editor) and **Single Service Sections** (individual Service editors). New groups import automatically on an admin visit without overwriting your existing field groups. Documentation: [config/SERVICES-SECTIONS.md](config/SERVICES-SECTIONS.md).

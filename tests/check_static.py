@@ -174,8 +174,12 @@ def inspect_blank_frontend():
             continue
         body = source.read_text(encoding="utf-8")
         check("<?php" in body, f"{rel}: no PHP opening tag")
-        check(not re.search(r"(?<!\?)\?>|<html|<body|<main|<div|\b(?:echo|print|the_content|get_header|get_footer|wp_head|wp_footer)\s*\(", body, re.I),
-              f"{rel}: must not output any frontend markup")
+        if rel in {"archive-service.php", "single-service.php"}:
+            check("theoct_services_open_document" in body and "theoct_services_close_document" in body,
+                  f"{rel}: expected Service-only document wrapper")
+        else:
+            check(not re.search(r"(?<!\?)\?>|<html|<body|<main|<div|\b(?:echo|print|the_content|get_header|get_footer|wp_head|wp_footer)\s*\(", body, re.I),
+                  f"{rel}: must remain blank")
     style = (ROOT / "style.css").read_text(encoding="utf-8")
     check("Theme Name: TheOct" in style, "Theme registration header missing")
     check(re.sub(r"/\*.*?\*/", "", style, flags=re.S).strip() == "", "Theme stylesheet is no longer blank")
@@ -208,6 +212,40 @@ def inspect_blank_frontend():
           "Missing CPT fallback regression test")
     check((ROOT / "assets/admin/cpt-editor.js").is_file(), "Missing admin tab script")
     check((ROOT / "assets/admin/cpt-editor.css").is_file(), "Missing admin-only style")
+    layout = ROOT / "template-parts" / "services-layout.php"
+    check(layout.is_file(), "Missing shared Services sections")
+    if layout.is_file():
+        markup = layout.read_text(encoding="utf-8")
+        for section in ("oct-hero", "oct-visual-band", "oct-deliverables", "oct-core",
+                        "oct-split", "oct-process", "oct-final-cta"):
+            check(section in markup, "Missing screenshot section: " + section)
+        check("get_header(" not in markup and "get_footer(" not in markup,
+              "Services layout must not render header/footer")
+    service_styles = ROOT / "assets" / "css" / "services-pages.css"
+    check(service_styles.is_file(), "Missing dedicated Services CSS")
+    service_module = ROOT / "inc" / "services-pages.php"
+    check(service_module.is_file(), "Missing Services integration")
+    if service_module.is_file():
+        code = service_module.read_text(encoding="utf-8")
+        check("is_post_type_archive( 'service' )" in code and "is_singular( 'service' )" in code,
+              "Frontend CSS must load only on Services archive / single")
+        check("theoct_services_install_layout_groups" in code,
+              "Missing non-overwriting field group installer")
+    extra = ROOT / "config" / "services-layout-schema.json"
+    check(extra.is_file(), "Missing Services archive/single field schema")
+    if extra.is_file():
+        specialized = json.loads(extra.read_text(encoding="utf-8"))
+        definitions = specialized.get("definitions", [])
+        check(len(definitions) == 2, "Require two Service-only field groups")
+        targets = sorted([tuple(d.get("meta", {}).get("_theoct_location_post_types", []))
+                          for d in definitions])
+        check(targets == [("service",), ("theoct_archive",)],
+              "Field groups must target Service and private archive records")
+        for definition in definitions:
+            fields = definition.get("meta", {}).get("_theoct_fields", [])
+            check(sum(f.get("type") == "tab" for f in fields) == 6,
+                  "Each Services layout requires six editor tabs")
+            inspect_fields(fields, definition.get("slug", "services"))
 
 
 def inspect_plugin(plugin_path):

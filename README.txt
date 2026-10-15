@@ -2,7 +2,7 @@
 Contributors: alifywork
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,11 @@ TheOct is a blank-front-end classic starter theme. When activated, it automatica
 5. The public-facing frontend will intentionally show a blank page. Add templates later to build the site.
 
 == Changelog ==
+
+= 1.0.3 =
+* Add reference-inspired Services archive and Single Service landing sections with no header/footer.
+* Add two TheOct Fields editor groups for the editable sections.
+* Only Services frontend templates render; other CPT templates remain empty.
 
 = 1.0.2 =
 * Add TheOct > Archive Pages dashboard editors for six archives.

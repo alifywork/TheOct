@@ -17,7 +17,10 @@ $cards      = isset( $args['cards'] ) && is_array( $args['cards'] ) ? $args['car
 $pagination = $args['pagination'] ?? '';
 
 $read = static function ( $name, $default = '' ) use ( $id, $prefix ) {
-    return theoct_services_meta( $id, $prefix . $name, $default );
+    $value = theoct_services_meta( $id, $prefix . $name, $default );
+    // Empty optional headings fall back to reference defaults after saving.
+    return is_string( $value ) && is_string( $default ) && '' === trim( $value ) && '' !== $default
+        ? $default : $value;
 };
 $archive_title = $id ? get_the_title( $id ) : __( 'Services', 'theoct' );
 if ( ! $is_single && ( 'Services Archive' === $archive_title || ! $archive_title ) ) {
