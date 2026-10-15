@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "plugin_version": "1.4.0",
-  "generated_at": "2026-10-15T11:45:00Z",
+  "generated_at": "2026-10-15T12:55:00Z",
   "definitions": [
     {
       "schema_version": 1,
@@ -3112,6 +3112,287 @@
         "_theoct_definition_key": "theoct_field_group_faq",
         "_theoct_rest_read_capability": "edit_posts",
         "_theoct_rest_write_capability": "edit_posts"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_archive_pages",
+      "type": "theoct_field_group",
+      "title": "Archive Page Settings",
+      "slug": "archive_pages",
+      "status": "publish",
+      "menu_order": 7,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_theoct_archive_archive_overview_tab",
+            "label": "Overview",
+            "name": "archive_overview_tab",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_eyebrow",
+            "label": "Eyebrow",
+            "name": "archive_eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "Short label above the archive heading. Saved for future frontend use.",
+            "default_value": "",
+            "max_length": 90
+          },
+          {
+            "key": "field_theoct_archive_archive_subtitle",
+            "label": "Short Subtitle",
+            "name": "archive_subtitle",
+            "type": "text",
+            "required": 0,
+            "instructions": "One-line support text; the actual archive heading is the WordPress title above.",
+            "default_value": "",
+            "max_length": 180
+          },
+          {
+            "key": "field_theoct_archive_archive_intro",
+            "label": "Introduction",
+            "name": "archive_intro",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": "Optional long-form archive introduction. The main WordPress editor is also available.",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_banner_image",
+            "label": "Additional Banner Image",
+            "name": "archive_banner_image",
+            "type": "image",
+            "required": 0,
+            "instructions": "Use Featured Image above for the primary archive image; this is optional.",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_banner_video",
+            "label": "Banner Video",
+            "name": "archive_banner_video",
+            "type": "video",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_content_tab",
+            "label": "Archive Content Settings",
+            "name": "archive_content_tab",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_layout_variant",
+            "label": "Layout Preference",
+            "name": "archive_layout_variant",
+            "type": "select",
+            "required": 0,
+            "instructions": "Editorial setting only. No archive listing is rendered until templates are built.",
+            "default_value": "grid",
+            "choices": "grid : Grid\nlist : List\nfeatured_grid : Featured + Grid"
+          },
+          {
+            "key": "field_theoct_archive_archive_columns",
+            "label": "Columns Preference",
+            "name": "archive_columns",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "default_value": "3",
+            "choices": "2 : 2 columns\n3 : 3 columns\n4 : 4 columns"
+          },
+          {
+            "key": "field_theoct_archive_archive_items_per_page",
+            "label": "Items per Page (future template)",
+            "name": "archive_items_per_page",
+            "type": "number",
+            "required": 0,
+            "instructions": "Stored value only; does not affect WordPress queries yet.",
+            "default_value": "12",
+            "min": 1,
+            "max": 60,
+            "step": 1
+          },
+          {
+            "key": "field_theoct_archive_archive_featured_items",
+            "label": "Featured Items",
+            "name": "archive_featured_items",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Select posts matching this archive (Services for Services, Projects for Projects, etc.). Plugin v1.4.0 pickers are not post-type restricted.",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_show_search",
+            "label": "Enable Archive Search (future)",
+            "name": "archive_show_search",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_theoct_archive_archive_empty_title",
+            "label": "Empty State Heading",
+            "name": "archive_empty_title",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_empty_message",
+            "label": "Empty State Description",
+            "name": "archive_empty_message",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_highlights",
+            "label": "Highlights",
+            "name": "archive_highlights",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "sub_fields_schema": "title | Highlight Title | text | required\nbody | Short Description | textarea\nicon | Icon | icon",
+            "sub_fields": [
+              {
+                "key": "sub_archive_highlight_title",
+                "name": "title",
+                "label": "Highlight Title",
+                "type": "text",
+                "required": 1
+              },
+              {
+                "key": "sub_archive_highlight_body",
+                "name": "body",
+                "label": "Short Description",
+                "type": "textarea",
+                "required": 0
+              },
+              {
+                "key": "sub_archive_highlight_icon",
+                "name": "icon",
+                "label": "Icon",
+                "type": "icon",
+                "required": 0
+              }
+            ],
+            "max": 12
+          },
+          {
+            "key": "field_theoct_archive_archive_conversion_tab",
+            "label": "Call to Action",
+            "name": "archive_conversion_tab",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_cta_enabled",
+            "label": "Enable Archive CTA",
+            "name": "archive_cta_enabled",
+            "type": "toggle",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_theoct_archive_archive_cta_link",
+            "label": "CTA Button",
+            "name": "archive_cta_link",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "archive_cta_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_theoct_archive_archive_cta_supporting_text",
+            "label": "CTA Supporting Text",
+            "name": "archive_cta_supporting_text",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "archive_cta_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_theoct_archive_archive_organization_tab",
+            "label": "Editorial Notes",
+            "name": "archive_organization_tab",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_theoct_archive_archive_editor_note",
+            "label": "Internal Editor Note",
+            "name": "archive_editor_note",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "Internal planning text; the theme does not output this publicly.",
+            "default_value": "",
+            "show_in_rest": 0
+          },
+          {
+            "key": "field_theoct_archive_archive_featured_order",
+            "label": "Featured Priority",
+            "name": "archive_featured_order",
+            "type": "number",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0",
+            "min": 0,
+            "step": 1
+          }
+        ],
+        "_theoct_location_post_types": [
+          "theoct_archive"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_rest_read_capability": "edit_pages",
+        "_theoct_rest_write_capability": "edit_pages",
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "theoct_archive"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_archive_pages"
       }
     }
   ]

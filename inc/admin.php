@@ -82,6 +82,16 @@ function theoct_admin_content_types() {
                 array( 'plan_features', 'Included features' ),
             ),
         ),
+        'theoct_archive' => array(
+            'placeholder' => 'Enter the archive page heading',
+            'taxonomy'    => '',
+            'summary'     => 'archive_subtitle',
+            'checklist'   => array(
+                array( 'title', 'Archive heading' ),
+                array( 'content', 'Archive description' ),
+                array( 'archive_subtitle', 'Short subtitle (optional)' ),
+            ),
+        ),
         'faq'        => array(
             'placeholder' => 'Enter the FAQ question',
             'taxonomy'    => 'faq_category',
