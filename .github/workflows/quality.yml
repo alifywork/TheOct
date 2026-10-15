@@ -44,6 +44,9 @@ jobs:
             php -l "$file"
           done < <(find . -name '*.php' -type f -print0)
 
+      - name: CPT auto-registration regression tests (no plugin required)
+        run: php tests/test-content-registration.php
+
       - name: JavaScript syntax
         run: |
           node --check assets/admin/cpt-editor.js

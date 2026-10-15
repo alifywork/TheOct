@@ -8,7 +8,7 @@ There is **no frontend yet**: no page layout, header, footer, menus, styling, wi
 
 - `style.css` — WordPress theme registration metadata only (no CSS rules).
 - `index.php` — required classic theme template (intentionally outputs nothing).
-- `functions.php` — placeholder for future functions (no hooks or enqueued assets).
+- `functions.php` — loads WordPress content registrations and dashboard-only enhancements; enqueues no public assets.
 - `comments.php` — blank comments template.
 - `screenshot.png` — blank white preview image.
 - `README.txt` — installation instructions.
@@ -18,11 +18,13 @@ There is **no frontend yet**: no page layout, header, footer, menus, styling, wi
 
 Download this repository as a ZIP and upload it in WordPress under **Appearance → Themes → Add New → Upload Theme**, or copy the files to `wp-content/themes/theoct/`. Activate **TheOct**. The site frontend will intentionally be blank until templates are implemented.
 
-Version: 1.0.0 · License: GPL-2.0-or-later.
+Version: 1.0.1 · License: GPL-2.0-or-later.
 
-## Custom content types (not activated by the theme)
+## Dashboard menus — automatically enabled
 
-The separate **TheOct Fields 1.4.0** plugin can import the content model stored at `config/theoct-fields-schema.json`. It defines Services, Projects, Case Studies, Industries, Teams, Pricing, and FAQs, their taxonomies, and field groups. For import instructions and template names, see [config/README.md](config/README.md). The existing frontend remains intentionally blank.
+Activating the theme **automatically registers** Services, Projects, Case Studies, Industries, Teams, Pricing and FAQs, plus their nine taxonomies, directly from `config/theoct-fields-schema.json`. They will appear in **WordPress Dashboard → left sidebar**, even if the separate TheOct Fields plugin has not been installed. The public frontend stays entirely blank.
+
+For the detailed **custom fields**, activate **TheOct Fields 1.4.0**. On your Dashboard, use the **Preview TheOct Fields Setup** button to review the bundled schema in the plugin's own import preview; click **Apply Import** explicitly to add the field groups. No schema is imported silently or used to overwrite plugin settings without approval. If the plugin has already registered the types, its registration takes precedence. See [config/README.md](config/README.md).
 
 ## WordPress dashboard editing
 

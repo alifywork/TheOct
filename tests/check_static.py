@@ -177,6 +177,20 @@ def inspect_blank_frontend():
     check("if ( is_admin() )" in functions, "Theme admin module is not admin-only")
     check("wp_enqueue_scripts" not in functions, "Frontend scripts/styles are now enqueued")
     check((ROOT / "inc/admin.php").is_file(), "Missing dashboard PHP module")
+    registration = ROOT / "inc" / "content-types.php"
+    check(registration.is_file(), "Missing CPT auto-registration module")
+    if registration.is_file():
+        code = registration.read_text(encoding="utf-8")
+        check("add_action( 'init', 'theoct_register_content_types', 12 )" in code,
+              "CPT fallback not attached at priority 12")
+        check("post_type_exists( $slug )" in code,
+              "Fallback must skip plugin-owned CPTs")
+        check("taxonomy_exists( $slug )" in code,
+              "Fallback must skip plugin-owned taxonomies")
+        check("theoct_preview_theme_schema" in code,
+              "Missing explicit import preview action")
+    check((ROOT / "tests/test-content-registration.php").is_file(),
+          "Missing CPT fallback regression test")
     check((ROOT / "assets/admin/cpt-editor.js").is_file(), "Missing admin tab script")
     check((ROOT / "assets/admin/cpt-editor.css").is_file(), "Missing admin-only style")
 

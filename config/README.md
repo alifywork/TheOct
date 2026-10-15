@@ -4,12 +4,13 @@ This repository stores the **theme template placeholders** and a **portable data
 
 ## Install and register
 
-1. Install and activate your separate `theoct-fields-1.4.0.zip` plugin in WordPress (**requires WordPress 6.5+ and PHP 8.1+**).
-2. Go to **TheOct Fields → Tools → Import JSON** and select **`config/theoct-fields-schema.json`**. Review the preview before applying. This imports the seven CPT definitions, nine taxonomies and seven field groups.
-3. Go to **Settings → Permalinks → Save Changes** once to refresh rewrite rules.
-4. Manage records under the new WordPress CPT menus. All theme archive and single PHP templates deliberately output nothing.
+1. Install and activate the latest **TheOct theme (v1.0.1 or later)**; reload your WordPress Dashboard. **Seven CPT menus and nine taxonomies now register automatically even without the plugin.**
+2. For the detailed custom fields, install and activate the separate `theoct-fields-1.4.0.zip` plugin (**requires WordPress 6.5+ and PHP 8.1+**).
+3. On the WordPress **Dashboard**, click **Preview TheOct Fields Setup**. The theme passes its bundled JSON to the plugin's own import-preview workflow. Review the 23 definitions and explicitly click **Apply Import**. Alternatively, use **TheOct Fields → Tools → Import JSON** and select the bundled `config/theoct-fields-schema.json` file.
+4. Go to **Settings → Permalinks → Save Changes** if you need to refresh existing route settings.
+5. Manage entries using the left-side WordPress CPT menus. All theme archive and single PHP templates deliberately output nothing.
 
-The JSON file in GitHub is a portable import file, **not automatically active**. Installing/activating the plugin and importing into your WordPress site's database is required. The plugin ZIP is not embedded or duplicated inside the theme.
+**CPT menus do not require the plugin or a JSON import.** Field groups do require the plugin and a reviewed import. If TheOct Fields is installed and has already registered any CPT or taxonomy, the plugin's definitions win and the theme safely skips that registration. The plugin ZIP is never bundled into the theme.
 
 ## Post types and routes
 
