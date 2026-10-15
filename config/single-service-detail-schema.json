@@ -110,15 +110,14 @@
                 "key": "field_ssd_hero_section_nav_1_anchor_id",
                 "name": "anchor_id",
                 "label": "Section Anchor ID",
-                "type": {
-                  "placeholder": "expertise"
-                },
+                "type": "text",
                 "required": 0,
                 "instructions": "",
-                "default_value": ""
+                "default_value": "",
+                "placeholder": "expertise"
               }
             ],
-            "sub_fields_schema": "label | Navigation Label | text\nanchor_id | Section Anchor ID | [object Object]"
+            "sub_fields_schema": "label | Navigation Label | text\nanchor_id | Section Anchor ID | text"
           },
           {
             "key": "field_ssd_visual_tab",
@@ -370,12 +369,11 @@
                 "key": "field_ssd_deliverable_columns_0_step_number",
                 "name": "step_number",
                 "label": "Column Number",
-                "type": {
-                  "placeholder": "01"
-                },
+                "type": "text",
                 "required": 0,
                 "instructions": "",
-                "default_value": ""
+                "default_value": "",
+                "placeholder": "01"
               },
               {
                 "key": "field_ssd_deliverable_columns_1_column_title",
@@ -418,7 +416,7 @@
                 "sub_fields_schema": "bullet | Checklist Item | text"
               }
             ],
-            "sub_fields_schema": "step_number | Column Number | [object Object]\ncolumn_title | Column Heading | text\nsummary | Column Description | textarea\nbullet_points | Column Checklist | repeater\n  bullet | Checklist Item | text"
+            "sub_fields_schema": "step_number | Column Number | text\ncolumn_title | Column Heading | text\nsummary | Column Description | textarea\nbullet_points | Column Checklist | repeater\n  bullet | Checklist Item | text"
           },
           {
             "key": "field_ssd_process_tab",
@@ -470,12 +468,11 @@
                 "key": "field_ssd_process_steps_0_step_number",
                 "name": "step_number",
                 "label": "Step Number",
-                "type": {
-                  "placeholder": "STEP 01"
-                },
+                "type": "text",
                 "required": 0,
                 "instructions": "",
-                "default_value": ""
+                "default_value": "",
+                "placeholder": "STEP 01"
               },
               {
                 "key": "field_ssd_process_steps_1_title",
@@ -505,7 +502,7 @@
                 "default_value": ""
               }
             ],
-            "sub_fields_schema": "step_number | Step Number | [object Object]\ntitle | Step Heading | text\ndescription | Step Description | textarea\nhighlight | Accent / Featured Step | true_false"
+            "sub_fields_schema": "step_number | Step Number | text\ntitle | Step Heading | text\ndescription | Step Description | textarea\nhighlight | Accent / Featured Step | true_false"
           },
           {
             "key": "field_ssd_stack_tab",
