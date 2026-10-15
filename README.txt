@@ -2,7 +2,7 @@
 Contributors: alifywork
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,10 @@ TheOct registers seven custom post types and nine taxonomies in the WordPress da
 5. The public-facing frontend will intentionally show a blank page. Add templates later to build the site.
 
 == Changelog ==
+
+= 1.0.4 =
+* Add screenshot-based fields exclusively to Single Service editors.
+* Automatically install one separate TheOct Fields group without overwriting existing fields or changing frontend templates.
 
 = 1.0.3 =
 * Add reference-inspired Services archive and Single Service landing sections with no header/footer.

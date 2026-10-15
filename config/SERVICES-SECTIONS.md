@@ -49,3 +49,7 @@ Based on the supplied Services reference screenshot. **Header and footer intenti
 - [ ] Responsive desktop, tablet, mobile layouts reviewed.
 - [ ] Single Service capabilities and process entered or existing field fallbacks checked.
 - [ ] Header/footer excluded; other post types remain blank.
+
+### Single Service screenshot-specific field update (v1.0.4)
+
+Only Service post **admin fields** were added. The 10 screenshot-specific tabs are provided by a separate group at `config/single-service-detail-schema.json` and auto-install on the next admin visit with TheOct Fields active. They do not change the existing Services Archive group or the current frontend markup; see [SINGLE-SERVICE-FIELDS.md](SINGLE-SERVICE-FIELDS.md).

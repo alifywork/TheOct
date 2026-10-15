@@ -208,3 +208,67 @@ function theoct_services_install_layout_groups() {
     }
 }
 add_action( 'admin_init', 'theoct_services_install_layout_groups', 50 );
+
+
+/**
+ * Add the screenshot-inspired Single Service field group without touching
+ * existing field groups, custom field values, archive pages or templates.
+ *
+ * Plugin API: TheOct\Fields\Core\DefinitionIO (v1.4.0).
+ * Runs only for administrators and imports only if this exact group is absent.
+ */
+function theoct_services_install_single_detail_fields() {
+    if ( ! is_admin()
+        || ! current_user_can( 'manage_options' )
+        || ! defined( 'THEOCT_FIELDS_VERSION' )
+        || ! class_exists( '\TheOct\Fields\Core\DefinitionIO' ) ) {
+        return;
+    }
+
+    $group_key = 'theoct_field_group_single_service_detail_reference';
+
+    if ( \TheOct\Fields\Core\DefinitionIO::findByDefinitionKey( $group_key ) ) {
+        return; // Keep any changes the editor has made to the installed group.
+    }
+
+    $schema_path = get_template_directory() . '/config/single-service-detail-schema.json';
+    if ( ! is_readable( $schema_path ) ) {
+        return;
+    }
+
+    $json = file_get_contents( $schema_path ); // Trusted theme bundle, no external requests.
+    if ( false === $json ) {
+        return;
+    }
+
+    $bundle = json_decode( $json, true );
+    if ( ! is_array( $bundle ) || 1 !== (int) ( $bundle['schema_version'] ?? 0 ) ) {
+        return;
+    }
+
+    $definitions = $bundle['definitions'] ?? null;
+    if ( ! is_array( $definitions ) || 1 !== count( $definitions ) ) {
+        return;
+    }
+
+    $definition = $definitions[0];
+    if ( ! is_array( $definition )
+        || $group_key !== ( $definition['definition_key'] ?? '' )
+        || 'theoct_field_group' !== ( $definition['type'] ?? '' )
+        || array( 'service' ) !== ( $definition['meta']['_theoct_location_post_types'] ?? null ) ) {
+        return;
+    }
+
+    $result = \TheOct\Fields\Core\DefinitionIO::importBundle(
+        array(
+            'schema_version' => 1,
+            'plugin_version' => THEOCT_FIELDS_VERSION,
+            'definitions'    => array( $definition ),
+        )
+    );
+
+    if ( is_wp_error( $result ) ) {
+        error_log( 'TheOct Single Service details: ' . $result->get_error_message() );
+    }
+}
+add_action( 'admin_init', 'theoct_services_install_single_detail_fields', 55 );

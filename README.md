@@ -16,7 +16,7 @@ TheOct is a lightweight WordPress classic starter theme with **editable Services
 
 Download this repository as a ZIP and upload it in WordPress under **Appearance → Themes → Add New → Upload Theme**, or copy the files to `wp-content/themes/theoct/`. Activate **TheOct**. The site frontend will intentionally be blank until templates are implemented.
 
-Version: 1.0.3 · License: GPL-2.0-or-later.
+Version: 1.0.4 · License: GPL-2.0-or-later.
 
 ## Dashboard menus — automatically enabled
 
@@ -43,3 +43,7 @@ Read [tests/TESTING-CHECKLIST.md](tests/TESTING-CHECKLIST.md) for static CI chec
 The **Services archive** (`/services/`) and **Single Service** (`/services/{slug}/`) now render seven responsive, screenshot-inspired sections: Hero, dark visual band, deliverables, service/capability cards, industries & typical projects, process, and final CTA. The archive cards use real published Service posts; single capability cards use their own repeater. These two pages intentionally **have no site header or footer**, as requested. Every other archive/single/frontend template stays blank.
 
 Install and activate TheOct Fields v1.4.0 to get two additive field groups: **Services Archive Sections** (only the Services Archive editor) and **Single Service Sections** (individual Service editors). New groups import automatically on an admin visit without overwriting your existing field groups. Documentation: [config/SERVICES-SECTIONS.md](config/SERVICES-SECTIONS.md).
+
+## Single Service screenshot fields (admin-only addition)
+
+The 10-part **Single Service — Screenshot Detail Sections** field group is defined in `config/single-service-detail-schema.json`. When TheOct Fields v1.4.0 is active, an administrator visiting the WordPress dashboard installs this additive group once. It appears only on **Services → Add New / Edit**. It contains 81 top-level editor entries for hero, blue visual/stat, problem/standards, deliverables, process, stack, automation examples, testimonials, FAQs, and contact/form configuration. It does **not** change a single frontend PHP/CSS file, any Services Archive fields, headers or footers. Existing Single Service Sections fields continue working. The form fields are editorial configuration only—not a working contact form. See [config/SINGLE-SERVICE-FIELDS.md](config/SINGLE-SERVICE-FIELDS.md).
