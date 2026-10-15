@@ -1,0 +1,9 @@
+/*
+ * Additional layout adjustments for right-to-left languages.
+ */
+.primary-navigation .sub-menu { left: auto; right: 0; }
+.alignleft { float: right; margin: .25rem 0 1rem 1.5rem; }
+.alignright { float: left; margin: .25rem 1.5rem 1rem 0; }
+.comment-author .avatar { float: right; margin-right: 0; margin-left: .8rem; }
+blockquote, .editor-styles-wrapper blockquote { border-left: 0; border-right: 4px solid #6246ea; padding-left: 0; padding-right: 1.4rem; }
+@media (max-width: 760px) { .primary-navigation .sub-menu { padding: 0 1rem 0 0; } }
