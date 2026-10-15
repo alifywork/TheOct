@@ -1,0 +1,956 @@
+{
+  "schema_version": 1,
+  "plugin_version": "1.4.0",
+  "generated_at": "2026-10-15T00:00:00Z",
+  "definitions": [
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_service",
+      "type": "theoct_content_type",
+      "title": "Services",
+      "slug": "service",
+      "status": "publish",
+      "menu_order": 0,
+      "meta": {
+        "_theoct_ct_slug": "service",
+        "_theoct_ct_singular": "Service",
+        "_theoct_ct_plural": "Services",
+        "_theoct_ct_rewrite": "services",
+        "_theoct_ct_icon": "dashicons-hammer",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 1,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "excerpt",
+          "thumbnail",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_service"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_project",
+      "type": "theoct_content_type",
+      "title": "Projects",
+      "slug": "project",
+      "status": "publish",
+      "menu_order": 1,
+      "meta": {
+        "_theoct_ct_slug": "project",
+        "_theoct_ct_singular": "Project",
+        "_theoct_ct_plural": "Projects",
+        "_theoct_ct_rewrite": "projects",
+        "_theoct_ct_icon": "dashicons-portfolio",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 1,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "excerpt",
+          "thumbnail",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_project"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_case_study",
+      "type": "theoct_content_type",
+      "title": "Case Studies",
+      "slug": "case_study",
+      "status": "publish",
+      "menu_order": 2,
+      "meta": {
+        "_theoct_ct_slug": "case_study",
+        "_theoct_ct_singular": "Case Study",
+        "_theoct_ct_plural": "Case Studies",
+        "_theoct_ct_rewrite": "case-studies",
+        "_theoct_ct_icon": "dashicons-analytics",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 1,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "excerpt",
+          "thumbnail",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_case_study"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_industry",
+      "type": "theoct_content_type",
+      "title": "Industries",
+      "slug": "industry",
+      "status": "publish",
+      "menu_order": 3,
+      "meta": {
+        "_theoct_ct_slug": "industry",
+        "_theoct_ct_singular": "Industry",
+        "_theoct_ct_plural": "Industries",
+        "_theoct_ct_rewrite": "industries",
+        "_theoct_ct_icon": "dashicons-building",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 1,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "excerpt",
+          "thumbnail",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_industry"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_team",
+      "type": "theoct_content_type",
+      "title": "Teams",
+      "slug": "team",
+      "status": "publish",
+      "menu_order": 4,
+      "meta": {
+        "_theoct_ct_slug": "team",
+        "_theoct_ct_singular": "Team Member",
+        "_theoct_ct_plural": "Teams",
+        "_theoct_ct_rewrite": "teams",
+        "_theoct_ct_icon": "dashicons-groups",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 1,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "thumbnail",
+          "page-attributes",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_team"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_pricing",
+      "type": "theoct_content_type",
+      "title": "Pricing",
+      "slug": "pricing",
+      "status": "publish",
+      "menu_order": 5,
+      "meta": {
+        "_theoct_ct_slug": "pricing",
+        "_theoct_ct_singular": "Pricing Plan",
+        "_theoct_ct_plural": "Pricing",
+        "_theoct_ct_rewrite": "pricing",
+        "_theoct_ct_icon": "dashicons-tag",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 1,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "page-attributes",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_pricing"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_content_type_faq",
+      "type": "theoct_content_type",
+      "title": "FAQs",
+      "slug": "faq",
+      "status": "publish",
+      "menu_order": 6,
+      "meta": {
+        "_theoct_ct_slug": "faq",
+        "_theoct_ct_singular": "FAQ",
+        "_theoct_ct_plural": "FAQs",
+        "_theoct_ct_rewrite": "faqs",
+        "_theoct_ct_icon": "dashicons-editor-help",
+        "_theoct_ct_public": 1,
+        "_theoct_ct_archive": 0,
+        "_theoct_ct_hierarchical": 0,
+        "_theoct_ct_rest": 1,
+        "_theoct_ct_map_meta_cap": 1,
+        "_theoct_ct_cap_mode": "post",
+        "_theoct_ct_supports": [
+          "title",
+          "editor",
+          "page-attributes",
+          "revisions"
+        ],
+        "_theoct_definition_key": "theoct_content_type_faq"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_service_category",
+      "type": "theoct_taxonomy",
+      "title": "Service Categories",
+      "slug": "service_category",
+      "status": "publish",
+      "menu_order": 0,
+      "meta": {
+        "_theoct_tax_slug": "service_category",
+        "_theoct_tax_singular": "Service Category",
+        "_theoct_tax_plural": "Service Categories",
+        "_theoct_tax_rewrite": "service-category",
+        "_theoct_tax_object_types": [
+          "service"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_service_category"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_project_category",
+      "type": "theoct_taxonomy",
+      "title": "Project Categories",
+      "slug": "project_category",
+      "status": "publish",
+      "menu_order": 1,
+      "meta": {
+        "_theoct_tax_slug": "project_category",
+        "_theoct_tax_singular": "Project Category",
+        "_theoct_tax_plural": "Project Categories",
+        "_theoct_tax_rewrite": "project-category",
+        "_theoct_tax_object_types": [
+          "project"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_project_category"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_project_technology",
+      "type": "theoct_taxonomy",
+      "title": "Project Technologies",
+      "slug": "project_technology",
+      "status": "publish",
+      "menu_order": 2,
+      "meta": {
+        "_theoct_tax_slug": "project_technology",
+        "_theoct_tax_singular": "Project Technology",
+        "_theoct_tax_plural": "Project Technologies",
+        "_theoct_tax_rewrite": "project-technology",
+        "_theoct_tax_object_types": [
+          "project"
+        ],
+        "_theoct_tax_hierarchical": 0,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_project_technology"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_case_study_category",
+      "type": "theoct_taxonomy",
+      "title": "Case Study Categories",
+      "slug": "case_study_category",
+      "status": "publish",
+      "menu_order": 3,
+      "meta": {
+        "_theoct_tax_slug": "case_study_category",
+        "_theoct_tax_singular": "Case Study Category",
+        "_theoct_tax_plural": "Case Study Categories",
+        "_theoct_tax_rewrite": "case-study-category",
+        "_theoct_tax_object_types": [
+          "case_study"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_case_study_category"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_industry_category",
+      "type": "theoct_taxonomy",
+      "title": "Industry Categories",
+      "slug": "industry_category",
+      "status": "publish",
+      "menu_order": 4,
+      "meta": {
+        "_theoct_tax_slug": "industry_category",
+        "_theoct_tax_singular": "Industry Category",
+        "_theoct_tax_plural": "Industry Categories",
+        "_theoct_tax_rewrite": "industry-category",
+        "_theoct_tax_object_types": [
+          "industry"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_industry_category"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_team_department",
+      "type": "theoct_taxonomy",
+      "title": "Team Departments",
+      "slug": "team_department",
+      "status": "publish",
+      "menu_order": 5,
+      "meta": {
+        "_theoct_tax_slug": "team_department",
+        "_theoct_tax_singular": "Team Department",
+        "_theoct_tax_plural": "Team Departments",
+        "_theoct_tax_rewrite": "team-department",
+        "_theoct_tax_object_types": [
+          "team"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_team_department"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_team_skill",
+      "type": "theoct_taxonomy",
+      "title": "Team Skills",
+      "slug": "team_skill",
+      "status": "publish",
+      "menu_order": 6,
+      "meta": {
+        "_theoct_tax_slug": "team_skill",
+        "_theoct_tax_singular": "Team Skill",
+        "_theoct_tax_plural": "Team Skills",
+        "_theoct_tax_rewrite": "team-skill",
+        "_theoct_tax_object_types": [
+          "team"
+        ],
+        "_theoct_tax_hierarchical": 0,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_team_skill"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_pricing_category",
+      "type": "theoct_taxonomy",
+      "title": "Pricing Categories",
+      "slug": "pricing_category",
+      "status": "publish",
+      "menu_order": 7,
+      "meta": {
+        "_theoct_tax_slug": "pricing_category",
+        "_theoct_tax_singular": "Pricing Category",
+        "_theoct_tax_plural": "Pricing Categories",
+        "_theoct_tax_rewrite": "pricing-category",
+        "_theoct_tax_object_types": [
+          "pricing"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_pricing_category"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_taxonomy_faq_category",
+      "type": "theoct_taxonomy",
+      "title": "FAQ Categories",
+      "slug": "faq_category",
+      "status": "publish",
+      "menu_order": 8,
+      "meta": {
+        "_theoct_tax_slug": "faq_category",
+        "_theoct_tax_singular": "FAQ Category",
+        "_theoct_tax_plural": "FAQ Categories",
+        "_theoct_tax_rewrite": "faq-category",
+        "_theoct_tax_object_types": [
+          "faq"
+        ],
+        "_theoct_tax_hierarchical": 1,
+        "_theoct_tax_rest": 1,
+        "_theoct_definition_key": "theoct_taxonomy_faq_category"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_service",
+      "type": "theoct_field_group",
+      "title": "Service Details",
+      "slug": "service",
+      "status": "publish",
+      "menu_order": 0,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_service_service_subtitle",
+            "label": "Short Subtitle",
+            "name": "service_subtitle",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_icon",
+            "label": "Service Icon",
+            "name": "service_icon",
+            "type": "icon",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_intro",
+            "label": "Service Introduction",
+            "name": "service_intro",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_benefits",
+            "label": "Service Benefits",
+            "name": "service_benefits",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "sub_fields": [
+              {
+                "key": "field_service_service_benefits_benefit",
+                "label": "Benefit",
+                "name": "benefit",
+                "type": "text",
+                "required": 0,
+                "instructions": ""
+              }
+            ]
+          },
+          {
+            "key": "field_service_related_projects",
+            "label": "Related Projects",
+            "name": "related_projects",
+            "type": "relationship",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_related_industries",
+            "label": "Related Industries",
+            "name": "related_industries",
+            "type": "relationship",
+            "required": 0,
+            "instructions": ""
+          }
+        ],
+        "_theoct_location_post_types": [
+          "service"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "service"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_service"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_project",
+      "type": "theoct_field_group",
+      "title": "Project Details",
+      "slug": "project",
+      "status": "publish",
+      "menu_order": 1,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_project_client_name",
+            "label": "Client Name",
+            "name": "client_name",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_url",
+            "label": "Live Project URL",
+            "name": "project_url",
+            "type": "url",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_completion_date",
+            "label": "Completion Date",
+            "name": "completion_date",
+            "type": "date",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_summary",
+            "label": "Project Summary",
+            "name": "project_summary",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_gallery",
+            "label": "Project Gallery",
+            "name": "project_gallery",
+            "type": "gallery",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_related_services",
+            "label": "Related Services",
+            "name": "related_services",
+            "type": "relationship",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_related_case_studies",
+            "label": "Related Case Studies",
+            "name": "related_case_studies",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "",
+            "bidirectional": 1,
+            "bidirectional_target": "related_project"
+          }
+        ],
+        "_theoct_location_post_types": [
+          "project"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "project"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_project"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_case_study",
+      "type": "theoct_field_group",
+      "title": "Case Study Details",
+      "slug": "case_study",
+      "status": "publish",
+      "menu_order": 2,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_case_study_related_project",
+            "label": "Related Project",
+            "name": "related_project",
+            "type": "post_object",
+            "required": 0,
+            "instructions": "",
+            "bidirectional": 1,
+            "bidirectional_target": "related_case_studies"
+          },
+          {
+            "key": "field_case_study_client_name",
+            "label": "Client Name",
+            "name": "client_name",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_challenge",
+            "label": "The Challenge",
+            "name": "challenge",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_approach",
+            "label": "Our Approach",
+            "name": "approach",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_outcome",
+            "label": "Results and Outcome",
+            "name": "outcome",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_results_metrics",
+            "label": "Results Metrics",
+            "name": "results_metrics",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "sub_fields": [
+              {
+                "key": "field_case_study_results_metrics_metric_label",
+                "label": "Metric Label",
+                "name": "metric_label",
+                "type": "text",
+                "required": 0,
+                "instructions": ""
+              },
+              {
+                "key": "field_case_study_results_metrics_metric_value",
+                "label": "Metric Value",
+                "name": "metric_value",
+                "type": "text",
+                "required": 0,
+                "instructions": ""
+              }
+            ]
+          },
+          {
+            "key": "field_case_study_client_testimonial",
+            "label": "Client Testimonial",
+            "name": "client_testimonial",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          }
+        ],
+        "_theoct_location_post_types": [
+          "case_study"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "case_study"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_case_study"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_industry",
+      "type": "theoct_field_group",
+      "title": "Industry Details",
+      "slug": "industry",
+      "status": "publish",
+      "menu_order": 3,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_industry_industry_summary",
+            "label": "Industry Summary",
+            "name": "industry_summary",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_challenges",
+            "label": "Common Challenges",
+            "name": "industry_challenges",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "sub_fields": [
+              {
+                "key": "field_industry_industry_challenges_challenge",
+                "label": "Challenge",
+                "name": "challenge",
+                "type": "text",
+                "required": 0,
+                "instructions": ""
+              }
+            ]
+          },
+          {
+            "key": "field_industry_related_services",
+            "label": "Related Services",
+            "name": "related_services",
+            "type": "relationship",
+            "required": 0,
+            "instructions": ""
+          }
+        ],
+        "_theoct_location_post_types": [
+          "industry"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "industry"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_industry"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_team",
+      "type": "theoct_field_group",
+      "title": "Team Member Details",
+      "slug": "team",
+      "status": "publish",
+      "menu_order": 4,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_team_job_title",
+            "label": "Job Title",
+            "name": "job_title",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_professional_bio",
+            "label": "Professional Bio",
+            "name": "professional_bio",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_linkedin_profile",
+            "label": "LinkedIn Profile URL",
+            "name": "linkedin_profile",
+            "type": "url",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_display_order",
+            "label": "Display Order",
+            "name": "display_order",
+            "type": "number",
+            "required": 0,
+            "instructions": ""
+          }
+        ],
+        "_theoct_location_post_types": [
+          "team"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "team"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_team"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_pricing",
+      "type": "theoct_field_group",
+      "title": "Pricing Plan Details",
+      "slug": "pricing",
+      "status": "publish",
+      "menu_order": 5,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_pricing_price_amount",
+            "label": "Price Amount",
+            "name": "price_amount",
+            "type": "number",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_currency",
+            "label": "Currency Code",
+            "name": "currency",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_billing_cycle",
+            "label": "Billing Cycle",
+            "name": "billing_cycle",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_plan_features",
+            "label": "Plan Features",
+            "name": "plan_features",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "sub_fields": [
+              {
+                "key": "field_pricing_plan_features_feature",
+                "label": "Feature",
+                "name": "feature",
+                "type": "text",
+                "required": 0,
+                "instructions": ""
+              }
+            ]
+          },
+          {
+            "key": "field_pricing_button_url",
+            "label": "Button URL",
+            "name": "button_url",
+            "type": "url",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_highlight_plan",
+            "label": "Featured Plan",
+            "name": "highlight_plan",
+            "type": "true_false",
+            "required": 0,
+            "instructions": ""
+          }
+        ],
+        "_theoct_location_post_types": [
+          "pricing"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "pricing"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_pricing"
+      }
+    },
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_faq",
+      "type": "theoct_field_group",
+      "title": "FAQ Details",
+      "slug": "faq",
+      "status": "publish",
+      "menu_order": 6,
+      "meta": {
+        "_theoct_fields": [
+          {
+            "key": "field_faq_short_answer",
+            "label": "Short Answer",
+            "name": "short_answer",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_related_services",
+            "label": "Related Services",
+            "name": "related_services",
+            "type": "relationship",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_display_order",
+            "label": "Display Order",
+            "name": "display_order",
+            "type": "number",
+            "required": 0,
+            "instructions": ""
+          }
+        ],
+        "_theoct_location_post_types": [
+          "faq"
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "faq"
+            }
+          ]
+        ],
+        "_theoct_definition_key": "theoct_field_group_faq"
+      }
+    }
+  ]
+}

@@ -19,3 +19,7 @@ There is **no frontend yet**: no page layout, header, footer, menus, styling, wi
 Download this repository as a ZIP and upload it in WordPress under **Appearance → Themes → Add New → Upload Theme**, or copy the files to `wp-content/themes/theoct/`. Activate **TheOct**. The site frontend will intentionally be blank until templates are implemented.
 
 Version: 1.0.0 · License: GPL-2.0-or-later.
+
+## Custom content types (not activated by the theme)
+
+The separate **TheOct Fields 1.4.0** plugin can import the content model stored at `config/theoct-fields-schema.json`. It defines Services, Projects, Case Studies, Industries, Teams, Pricing, and FAQs, their taxonomies, and field groups. For import instructions and template names, see [config/README.md](config/README.md). The existing frontend remains intentionally blank.
