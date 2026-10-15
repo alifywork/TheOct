@@ -6,7 +6,7 @@
 
 - [ ] Use **staging**, not production; backup the WordPress database and export existing TheOct Fields definitions.
 - [ ] Activate TheOct and TheOct Fields v1.4.0; import config/theoct-fields-schema.json via **TheOct Fields → Tools → Import JSON**.
-- [ ] Inspect import preview first: **7 CPTs, 9 taxonomies, 7 field groups** (23 definitions). Avoid unexpected changes to existing keys.
+- [ ] Inspect import preview first: **7 CPTs, 9 taxonomies, 8 field groups** (24 definitions). Avoid unexpected changes to existing keys.
 - [ ] Save **Settings → Permalinks** once after first import. Enable WP_DEBUG_LOG on staging and disable WP_DEBUG_DISPLAY.
 - [ ] Use disposable test content, roles and credentials; never commit the uploaded plugin ZIP, production data or credentials to this public repository.
 - [ ] Browser tests require the explicit WP_E2E_STAGING=1 opt-in. Opening Add New may create WordPress auto-drafts, but tests never click Publish/Update.
@@ -21,7 +21,7 @@ Run from the theme repository root:
 python3 tests/check_static.py
 ~~~
 
-- [ ] **PASS:** Seven post types (correct keys and archives), nine taxonomy mappings and seven populated field groups.
+- [ ] **PASS:** Seven post types (correct keys and archives), nine taxonomy mappings and eight field groups (including archive settings).
 - [ ] **PASS:** Unique import keys and field names, supported field types, correctly nested repeater/flexible layouts, conditional dependencies.
 - [ ] **PASS:** Projects ↔ Case Studies reciprocal relationship config.
 - [ ] **PASS:** All intentional blank templates, blank style.css, admin-only PHP/JS/CSS.
@@ -160,3 +160,12 @@ Record timestamp, WordPress/PHP/plugin/theme versions, browser and role, test ID
 | Browser tabs / lists | Staging | Not run | |
 | Security / roles | Staging | Not run | |
 | Public blank frontend | Staging | Not run | |
+
+## Private Archive Page editor tests
+
+- [ ] TheOct → Archive Pages shows six rows with canonical CPT archive URLs and edit links.
+- [ ] Each entry opens a protected admin editor with title, main content, featured image and SEO metadata controls.
+- [ ] Save/reload preserves edited title, description, image and SEO values.
+- [ ] With TheOct Fields 1.4.0 active, four archive-only custom-field sections appear. Their values and conditional CTA controls save/reload.
+- [ ] Editing any archive does not change its original public URL and does not render frontend content.
+- [ ] Additional configuration posts cannot be created or deleted through the normal UI.
