@@ -22,3 +22,6 @@ require_once get_template_directory() . '/inc/archive-pages.php';
 if ( is_admin() ) {
     require_once get_template_directory() . '/inc/admin.php';
 }
+
+// Only Service archive/detail pages get a designed frontend; all others remain blank.
+require_once get_template_directory() . '/inc/services-pages.php';
