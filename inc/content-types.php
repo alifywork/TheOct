@@ -227,7 +227,7 @@ function theoct_content_admin_notice() {
     echo '<div class="notice notice-warning"><p><strong>';
     esc_html_e( 'TheOct: Content menus are available, but some detailed custom field groups are not imported yet.', 'theoct' );
     echo '</strong></p><p>';
-    esc_html_e( 'Preview the bundled TheOct Fields schema (7 CPTs, 9 taxonomies and 7 field groups) before applying it. Existing definitions are not overwritten without review.', 'theoct' );
+    esc_html_e( 'Preview the bundled TheOct Fields schema (7 CPTs, 9 taxonomies and 8 field groups) before applying it. Existing definitions are not overwritten without review.', 'theoct' );
     echo '</p><p><a class="button button-primary" href="' . esc_url( $url ) . '">';
     esc_html_e( 'Preview TheOct Fields Setup', 'theoct' );
     echo '</a></p></div>';

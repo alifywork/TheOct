@@ -47,6 +47,9 @@ jobs:
       - name: CPT auto-registration regression tests (no plugin required)
         run: php tests/test-content-registration.php
 
+      - name: Private archive editor tests
+        run: php tests/test-archive-pages.php
+
       - name: JavaScript syntax
         run: |
           node --check assets/admin/cpt-editor.js

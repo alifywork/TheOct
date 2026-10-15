@@ -106,7 +106,7 @@ def inspect_schema():
     check(bundle.get("schema_version") == 1, "Schema version must be 1")
     check(bundle.get("plugin_version") == "1.4.0", "Schema must target plugin 1.4.0")
     definitions = bundle.get("definitions", [])
-    check(len(definitions) == 23, "Expected 7 CPTs + 9 taxonomies + 7 field groups")
+    check(len(definitions) == 24, "Expected 7 CPTs + 9 taxonomies + 8 field groups")
     definition_keys = [d.get("definition_key") for d in definitions]
     check(len(definition_keys) == len(set(definition_keys)), "Duplicate definition keys")
     typed = {}
@@ -124,7 +124,13 @@ def inspect_schema():
             groups[names[0]] = d
     check(set(posts) == set(CPTS), "CPT slug set differs from expected seven")
     check(set(taxes) == set(TAXONOMIES), "Taxonomy slug set differs from expected nine")
-    check(set(groups) == set(CPTS), "Each CPT must have exactly one field group")
+    check(set(groups) == (set(CPTS) | {"theoct_archive"}), "Expected seven CPT field groups and archive settings group")
+    if "theoct_archive" in groups:
+        archive = groups["theoct_archive"]["meta"]
+        fields = archive.get("_theoct_fields") or []
+        check(sum(field.get("type") == "tab" for field in fields) == 4, "Archive settings must have four section tabs")
+        check(archive.get("_theoct_show_in_rest") in (False, 0), "Archive group must not be REST exposed")
+        inspect_fields(fields, "theoct_archive")
     all_rewrites = []
     for slug, (rewrite, archive, single, tab_count) in CPTS.items():
         if slug not in posts or slug not in groups:
@@ -177,6 +183,15 @@ def inspect_blank_frontend():
     check("if ( is_admin() )" in functions, "Theme admin module is not admin-only")
     check("wp_enqueue_scripts" not in functions, "Frontend scripts/styles are now enqueued")
     check((ROOT / "inc/admin.php").is_file(), "Missing dashboard PHP module")
+    archive_module = ROOT / "inc" / "archive-pages.php"
+    check(archive_module.is_file(), "Missing private archive editor module")
+    if archive_module.is_file():
+        code = archive_module.read_text(encoding="utf-8")
+        check("'public'              => false" in code, "Internal archive records must not be public")
+        check("'publicly_queryable'  => false" in code, "Internal archive records must not have public URLs")
+        check("theoct_seed_archive_editors" in code, "Missing idempotent archive record seeding")
+        check("theoct_ensure_archive_field_group" in code, "Missing optional archive fields")
+    check((ROOT / "tests/test-archive-pages.php").is_file(), "Missing archive registration regression test")
     registration = ROOT / "inc" / "content-types.php"
     check(registration.is_file(), "Missing CPT auto-registration module")
     if registration.is_file():

@@ -18,13 +18,19 @@ There is **no frontend yet**: no page layout, header, footer, menus, styling, wi
 
 Download this repository as a ZIP and upload it in WordPress under **Appearance → Themes → Add New → Upload Theme**, or copy the files to `wp-content/themes/theoct/`. Activate **TheOct**. The site frontend will intentionally be blank until templates are implemented.
 
-Version: 1.0.1 · License: GPL-2.0-or-later.
+Version: 1.0.2 · License: GPL-2.0-or-later.
 
 ## Dashboard menus — automatically enabled
 
 Activating the theme **automatically registers** Services, Projects, Case Studies, Industries, Teams, Pricing and FAQs, plus their nine taxonomies, directly from `config/theoct-fields-schema.json`. They will appear in **WordPress Dashboard → left sidebar**, even if the separate TheOct Fields plugin has not been installed. The public frontend stays entirely blank.
 
 For the detailed **custom fields**, activate **TheOct Fields 1.4.0**. On your Dashboard, use the **Preview TheOct Fields Setup** button to review the bundled schema in the plugin's own import preview; click **Apply Import** explicitly to add the field groups. No schema is imported silently or used to overwrite plugin settings without approval. If the plugin has already registered the types, its registration takes precedence. See [config/README.md](config/README.md).
+
+## TheOct Archive Pages
+
+Open **TheOct → Archive Pages** in WordPress admin to edit six private archive configurations (Services, Projects, Case Studies, Industries, Teams and Pricing). Edit title, content, featured image and SEO metadata. TheOct Fields 1.4.0 adds an archive-only advanced custom field group automatically if none exists. These records have no public routes, while all six original CPT archive URLs remain unchanged. No frontend content is rendered.
+
+Full guide: [config/ARCHIVE-PAGES.md](config/ARCHIVE-PAGES.md).
 
 ## WordPress dashboard editing
 
