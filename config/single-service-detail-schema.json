@@ -1,0 +1,1337 @@
+{
+  "schema_version": 1,
+  "plugin_version": "1.4.0",
+  "definitions": [
+    {
+      "schema_version": 1,
+      "plugin_version": "1.4.0",
+      "definition_key": "theoct_field_group_single_service_detail_reference",
+      "type": "theoct_field_group",
+      "title": "Single Service — Screenshot Detail Sections",
+      "slug": "single_service_screenshot_details",
+      "status": "publish",
+      "menu_order": 12,
+      "meta": {
+        "_theoct_definition_key": "theoct_field_group_single_service_detail_reference",
+        "_theoct_fields": [
+          {
+            "key": "field_ssd_hero_tab",
+            "name": "ssd_hero_tab",
+            "label": "01 — Hero & Section Navigation",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_breadcrumb_label",
+            "name": "ssd_breadcrumb_label",
+            "label": "Back Link Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "Back link in content area, not the site header.",
+            "default_value": "Services"
+          },
+          {
+            "key": "field_ssd_breadcrumb_link",
+            "name": "ssd_breadcrumb_link",
+            "label": "Back to Services Link",
+            "type": "link",
+            "required": 0,
+            "instructions": "Optional; eventually link to /services/. No URL is created automatically.",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_hero_eyebrow",
+            "name": "ssd_hero_eyebrow",
+            "label": "Hero Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Services"
+          },
+          {
+            "key": "field_ssd_hero_heading",
+            "name": "ssd_hero_heading",
+            "label": "Main Hero Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "Leave empty to use this Service post's title.",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_hero_description",
+            "name": "ssd_hero_description",
+            "label": "Hero Short Description",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "placeholder": "Transform repetitive processes into intelligent, self-running workflows."
+          },
+          {
+            "key": "field_ssd_hero_primary_cta",
+            "name": "ssd_hero_primary_cta",
+            "label": "Primary CTA — Book Discovery",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_hero_secondary_cta",
+            "name": "ssd_hero_secondary_cta",
+            "label": "Secondary CTA — See Example Workflow",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_hero_section_nav",
+            "name": "ssd_hero_section_nav",
+            "label": "In-page Section Links",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Suggested anchors: expertise, deliverables, process, examples. Stored as page content settings only.",
+            "default_value": "",
+            "max": 8,
+            "sub_fields": [
+              {
+                "key": "field_ssd_hero_section_nav_0_label",
+                "name": "label",
+                "label": "Navigation Label",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_hero_section_nav_1_anchor_id",
+                "name": "anchor_id",
+                "label": "Section Anchor ID",
+                "type": {
+                  "placeholder": "expertise"
+                },
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "label | Navigation Label | text\nanchor_id | Section Anchor ID | [object Object]"
+          },
+          {
+            "key": "field_ssd_visual_tab",
+            "name": "ssd_visual_tab",
+            "label": "02 — Blue Hero Visual & Results",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_visual_background",
+            "name": "ssd_visual_background",
+            "label": "Blue Abstract Visual / Banner Image",
+            "type": "image",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_visual_mobile_background",
+            "name": "ssd_visual_mobile_background",
+            "label": "Mobile Banner Image",
+            "type": "image",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_metric_eyebrow",
+            "name": "ssd_metric_eyebrow",
+            "label": "Result Card Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "What's included"
+          },
+          {
+            "key": "field_ssd_metric_primary_value",
+            "name": "ssd_metric_primary_value",
+            "label": "Hero Result Value",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "placeholder": "20–40%"
+          },
+          {
+            "key": "field_ssd_metric_primary_label",
+            "name": "ssd_metric_primary_label",
+            "label": "Result Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "placeholder": "Reduction in manual workflow"
+          },
+          {
+            "key": "field_ssd_metric_supporting_note",
+            "name": "ssd_metric_supporting_note",
+            "label": "Result Supporting Note",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "placeholder": "Frequently. At scale. With control."
+          },
+          {
+            "key": "field_ssd_hero_metrics",
+            "name": "ssd_hero_metrics",
+            "label": "Additional Result Metrics",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "max": 6,
+            "sub_fields": [
+              {
+                "key": "field_ssd_hero_metrics_0_value",
+                "name": "value",
+                "label": "Metric Value",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_hero_metrics_1_label",
+                "name": "label",
+                "label": "Metric Label",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_hero_metrics_2_context",
+                "name": "context",
+                "label": "Context",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "value | Metric Value | text\nlabel | Metric Label | text\ncontext | Context | textarea"
+          },
+          {
+            "key": "field_ssd_problem_tab",
+            "name": "ssd_problem_tab",
+            "label": "03 — Problem & Standards",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_problem_eyebrow",
+            "name": "ssd_problem_eyebrow",
+            "label": "Section Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Why it's needed"
+          },
+          {
+            "key": "field_ssd_problem_heading",
+            "name": "ssd_problem_heading",
+            "label": "Problem Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "The problem with \"messy\" internal tools"
+          },
+          {
+            "key": "field_ssd_problem_description",
+            "name": "ssd_problem_description",
+            "label": "Problem Description",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": "Rich text explaining the customer's operational problem.",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_standards_eyebrow",
+            "name": "ssd_standards_eyebrow",
+            "label": "Standards Panel Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Our standards"
+          },
+          {
+            "key": "field_ssd_standards_heading",
+            "name": "ssd_standards_heading",
+            "label": "Standards Panel Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_standards_items",
+            "name": "ssd_standards_items",
+            "label": "Our Standards Checklist",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Examples: Mapped from current processes; Integration points documented.",
+            "default_value": "",
+            "max": 12,
+            "sub_fields": [
+              {
+                "key": "field_ssd_standards_items_0_label",
+                "name": "label",
+                "label": "Standard / Promise",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_standards_items_1_description",
+                "name": "description",
+                "label": "Supporting Detail",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_standards_items_2_icon",
+                "name": "icon",
+                "label": "Icon",
+                "type": "icon",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "label | Standard / Promise | text\ndescription | Supporting Detail | textarea\nicon | Icon | icon"
+          },
+          {
+            "key": "field_ssd_included_tab",
+            "name": "ssd_included_tab",
+            "label": "04 — What's Included / Deliverables",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_included_eyebrow",
+            "name": "ssd_included_eyebrow",
+            "label": "Deliverables Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Deliverables"
+          },
+          {
+            "key": "field_ssd_included_heading",
+            "name": "ssd_included_heading",
+            "label": "Deliverables Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "What's included"
+          },
+          {
+            "key": "field_ssd_included_description",
+            "name": "ssd_included_description",
+            "label": "Deliverables Introduction",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_deliverable_columns",
+            "name": "ssd_deliverable_columns",
+            "label": "Deliverable Columns (Strategy, Build, Handoff, Support)",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Four columns in the screenshot. Nested bullet rows are editable in the TheOct Fields repeater.",
+            "default_value": "",
+            "max": 8,
+            "sub_fields": [
+              {
+                "key": "field_ssd_deliverable_columns_0_step_number",
+                "name": "step_number",
+                "label": "Column Number",
+                "type": {
+                  "placeholder": "01"
+                },
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_deliverable_columns_1_column_title",
+                "name": "column_title",
+                "label": "Column Heading",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_deliverable_columns_2_summary",
+                "name": "summary",
+                "label": "Column Description",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_deliverable_columns_3_bullet_points",
+                "name": "bullet_points",
+                "label": "Column Checklist",
+                "type": "repeater",
+                "required": 0,
+                "instructions": "",
+                "default_value": "",
+                "max": 16,
+                "sub_fields": [
+                  {
+                    "key": "field_ssd_deliverable_columns_bullet_points_0_bullet",
+                    "name": "bullet",
+                    "label": "Checklist Item",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  }
+                ],
+                "sub_fields_schema": "bullet | Checklist Item | text"
+              }
+            ],
+            "sub_fields_schema": "step_number | Column Number | [object Object]\ncolumn_title | Column Heading | text\nsummary | Column Description | textarea\nbullet_points | Column Checklist | repeater\n  bullet | Checklist Item | text"
+          },
+          {
+            "key": "field_ssd_process_tab",
+            "name": "ssd_process_tab",
+            "label": "05 — Process Timeline",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_process_eyebrow",
+            "name": "ssd_process_eyebrow",
+            "label": "Process Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "How it works"
+          },
+          {
+            "key": "field_ssd_process_heading",
+            "name": "ssd_process_heading",
+            "label": "Process Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "A process built for results"
+          },
+          {
+            "key": "field_ssd_process_intro",
+            "name": "ssd_process_intro",
+            "label": "Process Short Description",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_process_steps",
+            "name": "ssd_process_steps",
+            "label": "Process Steps",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Add four rows to follow the provided reference.",
+            "default_value": "",
+            "max": 10,
+            "sub_fields": [
+              {
+                "key": "field_ssd_process_steps_0_step_number",
+                "name": "step_number",
+                "label": "Step Number",
+                "type": {
+                  "placeholder": "STEP 01"
+                },
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_process_steps_1_title",
+                "name": "title",
+                "label": "Step Heading",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_process_steps_2_description",
+                "name": "description",
+                "label": "Step Description",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_process_steps_3_highlight",
+                "name": "highlight",
+                "label": "Accent / Featured Step",
+                "type": "true_false",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "step_number | Step Number | [object Object]\ntitle | Step Heading | text\ndescription | Step Description | textarea\nhighlight | Accent / Featured Step | true_false"
+          },
+          {
+            "key": "field_ssd_stack_tab",
+            "name": "ssd_stack_tab",
+            "label": "06 — Technology Stack Logos",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_stack_eyebrow",
+            "name": "ssd_stack_eyebrow",
+            "label": "Tech Stack Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Our stack"
+          },
+          {
+            "key": "field_ssd_stack_heading",
+            "name": "ssd_stack_heading",
+            "label": "Optional Stack Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_stack_logos",
+            "name": "ssd_stack_logos",
+            "label": "Technology / Partner Logos",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Upload brand logos only with the appropriate rights; don't hardcode reference-site logos.",
+            "default_value": "",
+            "max": 24,
+            "sub_fields": [
+              {
+                "key": "field_ssd_stack_logos_0_name",
+                "name": "name",
+                "label": "Technology Name",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_stack_logos_1_logo",
+                "name": "logo",
+                "label": "Logo Image",
+                "type": "image",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_stack_logos_2_url",
+                "name": "url",
+                "label": "Website URL",
+                "type": "url",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_stack_logos_3_logo_alt",
+                "name": "logo_alt",
+                "label": "Accessible Logo Description",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "name | Technology Name | text\nlogo | Logo Image | image\nurl | Website URL | url\nlogo_alt | Accessible Logo Description | text"
+          },
+          {
+            "key": "field_ssd_examples_tab",
+            "name": "ssd_examples_tab",
+            "label": "07 — Automation Examples / Use Cases",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_examples_eyebrow",
+            "name": "ssd_examples_eyebrow",
+            "label": "Examples Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "AI systems that work"
+          },
+          {
+            "key": "field_ssd_examples_heading",
+            "name": "ssd_examples_heading",
+            "label": "Examples Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "See what's possible"
+          },
+          {
+            "key": "field_ssd_examples_description",
+            "name": "ssd_examples_description",
+            "label": "Examples Introduction",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_examples_background",
+            "name": "ssd_examples_background",
+            "label": "Blue Decorative Background Image",
+            "type": "image",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_example_cards",
+            "name": "ssd_example_cards",
+            "label": "Automation Example Cards",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Reference shows Lead Intake & Enrichment, Support Triage, and Invoice Processing.",
+            "default_value": "",
+            "max": 20,
+            "sub_fields": [
+              {
+                "key": "field_ssd_example_cards_0_card_title",
+                "name": "card_title",
+                "label": "Example Title",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_1_card_category",
+                "name": "card_category",
+                "label": "Category / Pill",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_2_card_type",
+                "name": "card_type",
+                "label": "Technology / Type Pill",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_3_input",
+                "name": "input",
+                "label": "Input",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_4_automation",
+                "name": "automation",
+                "label": "Automation",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_5_output",
+                "name": "output",
+                "label": "Output",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_6_short_description",
+                "name": "short_description",
+                "label": "Card Description",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_7_card_image",
+                "name": "card_image",
+                "label": "Optional Card Image",
+                "type": "image",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_example_cards_8_card_link",
+                "name": "card_link",
+                "label": "Optional Read More Link",
+                "type": "link",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "card_title | Example Title | text\ncard_category | Category / Pill | text\ncard_type | Technology / Type Pill | text\ninput | Input | text\nautomation | Automation | text\noutput | Output | text\nshort_description | Card Description | textarea\ncard_image | Optional Card Image | image\ncard_link | Optional Read More Link | link"
+          },
+          {
+            "key": "field_ssd_testimonials_tab",
+            "name": "ssd_testimonials_tab",
+            "label": "08 — Client Testimonials",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_testimonials_eyebrow",
+            "name": "ssd_testimonials_eyebrow",
+            "label": "Testimonials Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_testimonials_heading",
+            "name": "ssd_testimonials_heading",
+            "label": "Testimonials Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "What clients say"
+          },
+          {
+            "key": "field_ssd_testimonials",
+            "name": "ssd_testimonials",
+            "label": "Client Reviews",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "Consent flag is an editorial reminder only; it is not proof of legal permission.",
+            "default_value": "",
+            "max": 24,
+            "sub_fields": [
+              {
+                "key": "field_ssd_testimonials_0_client_name",
+                "name": "client_name",
+                "label": "Client Name",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_testimonials_1_client_role",
+                "name": "client_role",
+                "label": "Role / Company",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_testimonials_2_client_photo",
+                "name": "client_photo",
+                "label": "Client Portrait",
+                "type": "image",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_testimonials_3_quote",
+                "name": "quote",
+                "label": "Testimonial Quote",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_testimonials_4_source_url",
+                "name": "source_url",
+                "label": "Verification / Source URL",
+                "type": "url",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_testimonials_5_consent_verified",
+                "name": "consent_verified",
+                "label": "Permission to Publish Confirmed",
+                "type": "true_false",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "client_name | Client Name | text\nclient_role | Role / Company | text\nclient_photo | Client Portrait | image\nquote | Testimonial Quote | textarea\nsource_url | Verification / Source URL | url\nconsent_verified | Permission to Publish Confirmed | true_false"
+          },
+          {
+            "key": "field_ssd_faq_tab",
+            "name": "ssd_faq_tab",
+            "label": "09 — FAQ Accordion",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_faq_eyebrow",
+            "name": "ssd_faq_eyebrow",
+            "label": "FAQ Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "FAQ"
+          },
+          {
+            "key": "field_ssd_faq_heading",
+            "name": "ssd_faq_heading",
+            "label": "FAQ Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Common questions"
+          },
+          {
+            "key": "field_ssd_faq_description",
+            "name": "ssd_faq_description",
+            "label": "FAQ Section Introduction",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_faq_items",
+            "name": "ssd_faq_items",
+            "label": "FAQ Questions & Answers",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "max": 30,
+            "sub_fields": [
+              {
+                "key": "field_ssd_faq_items_0_question",
+                "name": "question",
+                "label": "Question",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_faq_items_1_answer",
+                "name": "answer",
+                "label": "Answer",
+                "type": "wysiwyg",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_faq_items_2_open_by_default",
+                "name": "open_by_default",
+                "label": "Expanded By Default",
+                "type": "true_false",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "question | Question | text\nanswer | Answer | wysiwyg\nopen_by_default | Expanded By Default | true_false"
+          },
+          {
+            "key": "field_ssd_faq_related_posts",
+            "name": "ssd_faq_related_posts",
+            "label": "Related Existing FAQ Posts",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Optional: link FAQ CPT posts. The plugin picker is not restricted to one post type, so select FAQ entries only.",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_faq_bottom_cta",
+            "name": "ssd_faq_bottom_cta",
+            "label": "FAQ Footer CTA",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_tab",
+            "name": "ssd_contact_tab",
+            "label": "10 — Let's Talk / Discovery Form",
+            "type": "tab",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_eyebrow",
+            "name": "ssd_contact_eyebrow",
+            "label": "Contact Section Eyebrow",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Get started"
+          },
+          {
+            "key": "field_ssd_contact_heading",
+            "name": "ssd_contact_heading",
+            "label": "Contact Section Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Let's talk about your workflows"
+          },
+          {
+            "key": "field_ssd_contact_description",
+            "name": "ssd_contact_description",
+            "label": "Contact Section Intro",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_background",
+            "name": "ssd_contact_background",
+            "label": "Contact Section Blue Background",
+            "type": "image",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_benefits",
+            "name": "ssd_contact_benefits",
+            "label": "Contact Panel Checklist",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "max": 12,
+            "sub_fields": [
+              {
+                "key": "field_ssd_contact_benefits_0_item",
+                "name": "item",
+                "label": "Benefit / Promise",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "item | Benefit / Promise | text"
+          },
+          {
+            "key": "field_ssd_contact_phone",
+            "name": "ssd_contact_phone",
+            "label": "Public Phone Number",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_email",
+            "name": "ssd_contact_email",
+            "label": "Public Contact Email",
+            "type": "email",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_location",
+            "name": "ssd_contact_location",
+            "label": "Location / Availability",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": ""
+          },
+          {
+            "key": "field_ssd_contact_minutes",
+            "name": "ssd_contact_minutes",
+            "label": "Call Duration Note",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "30 minutes"
+          },
+          {
+            "key": "field_ssd_contact_form_enabled",
+            "name": "ssd_contact_form_enabled",
+            "label": "Enable Discovery Form (future frontend)",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "Controls editor configuration only; does not create a live form endpoint.",
+            "default_value": "1"
+          },
+          {
+            "key": "field_ssd_form_title",
+            "name": "ssd_form_title",
+            "label": "Form Heading",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Schedule a discovery call",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_intro",
+            "name": "ssd_form_intro",
+            "label": "Form Description",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_name_label",
+            "name": "ssd_form_name_label",
+            "label": "Name Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Name",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_phone_label",
+            "name": "ssd_form_phone_label",
+            "label": "Phone Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Phone",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_email_label",
+            "name": "ssd_form_email_label",
+            "label": "Email Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Business Email",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_company_label",
+            "name": "ssd_form_company_label",
+            "label": "Company Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Company Name",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_service_label",
+            "name": "ssd_form_service_label",
+            "label": "Service Dropdown Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Service",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_service_options",
+            "name": "ssd_form_service_options",
+            "label": "Service Dropdown Options",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "max": 20,
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ],
+            "sub_fields": [
+              {
+                "key": "field_ssd_form_service_options_0_value",
+                "name": "value",
+                "label": "Stored Value",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "field_ssd_form_service_options_1_label",
+                "name": "label",
+                "label": "Visible Option Label",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "value | Stored Value | text\nlabel | Visible Option Label | text"
+          },
+          {
+            "key": "field_ssd_form_message_label",
+            "name": "ssd_form_message_label",
+            "label": "Message Label",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Message",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_submit_label",
+            "name": "ssd_form_submit_label",
+            "label": "Submit Button Text",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "default_value": "Send message",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_privacy_note",
+            "name": "ssd_form_privacy_note",
+            "label": "Privacy / Data-use Note",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_privacy_link",
+            "name": "ssd_form_privacy_link",
+            "label": "Privacy Policy Link",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_success_copy",
+            "name": "ssd_form_success_copy",
+            "label": "Success Message (future)",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_error_copy",
+            "name": "ssd_form_error_copy",
+            "label": "Error Message (future)",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "default_value": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_ssd_form_target_email",
+            "name": "ssd_form_target_email",
+            "label": "Internal Recipient (future integration)",
+            "type": "email",
+            "required": 0,
+            "instructions": "An email address to configure future handling. This field does not send messages; do not store secrets here.",
+            "default_value": "",
+            "show_in_rest": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "ssd_contact_form_enabled",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          }
+        ],
+        "_theoct_location_post_types": [
+          "service"
+        ],
+        "_theoct_location_rule_groups": [
+          [
+            {
+              "param": "post_type",
+              "operator": "==",
+              "value": "service"
+            }
+          ]
+        ],
+        "_theoct_show_in_rest": 0,
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
+      }
+    }
+  ]
+}
