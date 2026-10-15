@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "plugin_version": "1.4.0",
-  "generated_at": "2026-10-15T00:00:00Z",
+  "generated_at": "2026-10-15T11:45:00Z",
   "definitions": [
     {
       "schema_version": 1,
@@ -428,12 +428,22 @@
       "meta": {
         "_theoct_fields": [
           {
+            "key": "field_service_service_overview_tab",
+            "name": "service_overview_tab",
+            "label": "Overview",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_service_service_subtitle",
-            "label": "Short Subtitle",
+            "label": "Service Subtitle",
             "name": "service_subtitle",
             "type": "text",
             "required": 0,
-            "instructions": ""
+            "instructions": "",
+            "max_length": 150,
+            "placeholder": "Example: Strategy-led digital experiences"
           },
           {
             "key": "field_service_service_icon",
@@ -441,33 +451,246 @@
             "name": "service_icon",
             "type": "icon",
             "required": 0,
-            "instructions": ""
+            "instructions": "Optional icon uploaded in the media library."
           },
           {
             "key": "field_service_service_intro",
-            "label": "Service Introduction",
+            "label": "Introduction",
             "name": "service_intro",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "Short introduction for service cards or detail pages.",
+            "max_length": 750
+          },
+          {
+            "key": "field_service_service_tagline",
+            "name": "service_tagline",
+            "label": "Short Tagline",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "max_length": 140
+          },
+          {
+            "key": "field_service_service_hero_image",
+            "name": "service_hero_image",
+            "label": "Hero Image",
+            "type": "image",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_video",
+            "name": "service_video",
+            "label": "Intro Video",
+            "type": "video",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_audience",
+            "name": "service_audience",
+            "label": "Who This Helps",
             "type": "textarea",
             "required": 0,
             "instructions": ""
           },
           {
+            "key": "field_service_service_outcomes",
+            "name": "service_outcomes",
+            "label": "Expected Outcomes",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_offer_tab",
+            "name": "service_offer_tab",
+            "label": "Offer & Deliverables",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_service_service_benefits",
-            "label": "Service Benefits",
+            "label": "Benefits",
             "name": "service_benefits",
             "type": "repeater",
             "required": 0,
-            "instructions": "",
+            "instructions": "Key benefits; one benefit per row.",
             "sub_fields": [
               {
                 "key": "field_service_service_benefits_benefit",
-                "label": "Benefit",
                 "name": "benefit",
+                "label": "Benefit",
                 "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_benefits_1_description",
+                "name": "description",
+                "label": "Description",
+                "type": "textarea",
                 "required": 0,
-                "instructions": ""
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_benefits_2_icon",
+                "name": "icon",
+                "label": "Icon",
+                "type": "icon",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
               }
-            ]
+            ],
+            "max": 16,
+            "sub_fields_schema": "benefit | Benefit | text | required\ndescription | Description | textarea\nicon | Icon | icon"
+          },
+          {
+            "key": "field_service_service_features",
+            "name": "service_features",
+            "label": "Features & Inclusions",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 30,
+            "sub_fields": [
+              {
+                "key": "sub_service_service_features_0_feature",
+                "name": "feature",
+                "label": "Feature",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_features_1_details",
+                "name": "details",
+                "label": "Details",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "feature | Feature | text | required\ndetails | Details | textarea"
+          },
+          {
+            "key": "field_service_service_deliverables",
+            "name": "service_deliverables",
+            "label": "Deliverables",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 20,
+            "sub_fields": [
+              {
+                "key": "sub_service_service_deliverables_0_title",
+                "name": "title",
+                "label": "Deliverable",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_deliverables_1_description",
+                "name": "description",
+                "label": "Description",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_deliverables_2_example_file",
+                "name": "example_file",
+                "label": "Example Download",
+                "type": "file",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "title | Deliverable | text | required\ndescription | Description | textarea\nexample_file | Example Download | file"
+          },
+          {
+            "key": "field_service_service_process",
+            "name": "service_process",
+            "label": "Process Steps",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 15,
+            "sub_fields": [
+              {
+                "key": "sub_service_service_process_0_step_title",
+                "name": "step_title",
+                "label": "Step Title",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_process_1_step_description",
+                "name": "step_description",
+                "label": "Step Description",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_service_service_process_2_icon",
+                "name": "icon",
+                "label": "Step Icon",
+                "type": "icon",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "step_title | Step Title | text | required\nstep_description | Step Description | textarea\nicon | Step Icon | icon"
+          },
+          {
+            "key": "field_service_service_technologies",
+            "name": "service_technologies",
+            "label": "Tools & Technologies",
+            "type": "tags",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_estimated_duration",
+            "name": "service_estimated_duration",
+            "label": "Estimated Duration",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "placeholder": "e.g. 4–8 weeks"
+          },
+          {
+            "key": "field_service_service_delivery_mode",
+            "name": "service_delivery_mode",
+            "label": "Delivery Mode",
+            "type": "multi_select",
+            "required": 0,
+            "instructions": "",
+            "choices": "remote : Remote\nonsite : On site\nhybrid : Hybrid"
+          },
+          {
+            "key": "field_service_service_proof_tab",
+            "name": "service_proof_tab",
+            "label": "Proof & Relationships",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
           },
           {
             "key": "field_service_related_projects",
@@ -475,7 +698,7 @@
             "name": "related_projects",
             "type": "relationship",
             "required": 0,
-            "instructions": ""
+            "instructions": "Select Project posts. The v1.4.0 picker may also show other content types; choose only Projects."
           },
           {
             "key": "field_service_related_industries",
@@ -483,7 +706,110 @@
             "name": "related_industries",
             "type": "relationship",
             "required": 0,
+            "instructions": "Choose Industry posts."
+          },
+          {
+            "key": "field_service_related_case_studies",
+            "name": "related_case_studies",
+            "label": "Related Case Studies",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose published Case Study posts."
+          },
+          {
+            "key": "field_service_related_team_members",
+            "name": "related_team_members",
+            "label": "Service Team",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Team posts."
+          },
+          {
+            "key": "field_service_related_pricing_plans",
+            "name": "related_pricing_plans",
+            "label": "Related Pricing Plans",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Pricing posts."
+          },
+          {
+            "key": "field_service_service_gallery",
+            "name": "service_gallery",
+            "label": "Service Gallery",
+            "type": "gallery",
+            "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_service_service_action_tab",
+            "name": "service_action_tab",
+            "label": "Conversion",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_service_service_show_cta",
+            "name": "service_show_cta",
+            "label": "Enable Service CTA",
+            "type": "toggle",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_service_service_cta_link",
+            "name": "service_cta_link",
+            "label": "Service CTA Link",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "service_show_cta",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_service_service_cta_note",
+            "name": "service_cta_note",
+            "label": "CTA Supporting Note",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "service_show_cta",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ],
+            "max_length": 180
+          },
+          {
+            "key": "field_service_service_featured",
+            "name": "service_featured",
+            "label": "Feature on Services Listing",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_service_service_sort_order",
+            "name": "service_sort_order",
+            "label": "Manual Sort Order",
+            "type": "number",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
           }
         ],
         "_theoct_location_post_types": [
@@ -499,7 +825,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_service"
+        "_theoct_definition_key": "theoct_field_group_service",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     },
     {
@@ -514,12 +842,38 @@
       "meta": {
         "_theoct_fields": [
           {
+            "key": "field_project_project_overview_tab",
+            "name": "project_overview_tab",
+            "label": "Project Snapshot",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_project_client_name",
             "label": "Client Name",
             "name": "client_name",
             "type": "text",
             "required": 0,
+            "instructions": "",
+            "max_length": 160
+          },
+          {
+            "key": "field_project_client_logo",
+            "name": "client_logo",
+            "label": "Client Logo",
+            "type": "image",
+            "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_project_project_summary",
+            "label": "Project Summary",
+            "name": "project_summary",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "max_length": 1200
           },
           {
             "key": "field_project_project_url",
@@ -538,10 +892,37 @@
             "instructions": ""
           },
           {
-            "key": "field_project_project_summary",
-            "label": "Project Summary",
-            "name": "project_summary",
-            "type": "textarea",
+            "key": "field_project_project_start_date",
+            "name": "project_start_date",
+            "label": "Start Date",
+            "type": "date",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_status",
+            "name": "project_status",
+            "label": "Project Status",
+            "type": "status",
+            "required": 0,
+            "instructions": "",
+            "choices": "in_progress : In Progress\nreview : In Review\ncompleted : Completed\narchived : Archived",
+            "default_value": "completed"
+          },
+          {
+            "key": "field_project_project_role",
+            "name": "project_role",
+            "label": "Our Role",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "placeholder": "e.g. Design, development and analytics"
+          },
+          {
+            "key": "field_project_project_hero",
+            "name": "project_hero",
+            "label": "Cover Image",
+            "type": "image",
             "required": 0,
             "instructions": ""
           },
@@ -554,12 +935,266 @@
             "instructions": ""
           },
           {
+            "key": "field_project_project_walkthrough",
+            "name": "project_walkthrough",
+            "label": "Walkthrough Video",
+            "type": "video",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_story_tab",
+            "name": "project_story_tab",
+            "label": "The Work",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_challenge",
+            "name": "project_challenge",
+            "label": "Project Challenge",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_solution",
+            "name": "project_solution",
+            "label": "Our Solution",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_technologies",
+            "name": "project_technologies",
+            "label": "Technology Stack",
+            "type": "tags",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_deliverables",
+            "name": "project_deliverables",
+            "label": "Deliverables",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 30,
+            "sub_fields": [
+              {
+                "key": "sub_project_project_deliverables_0_deliverable",
+                "name": "deliverable",
+                "label": "Deliverable",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_project_project_deliverables_1_notes",
+                "name": "notes",
+                "label": "Notes",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "deliverable | Deliverable | text | required\nnotes | Notes | textarea"
+          },
+          {
+            "key": "field_project_project_results",
+            "name": "project_results",
+            "label": "Project Results",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 16,
+            "sub_fields": [
+              {
+                "key": "sub_project_project_results_0_label",
+                "name": "label",
+                "label": "Result Label",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_project_project_results_1_value",
+                "name": "value",
+                "label": "Result Value",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_project_project_results_2_context",
+                "name": "context",
+                "label": "Context",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "label | Result Label | text | required\nvalue | Result Value | text\ncontext | Context | textarea"
+          },
+          {
+            "key": "field_project_project_content_sections",
+            "name": "project_content_sections",
+            "label": "Project Story Sections",
+            "type": "flexible_content",
+            "required": 0,
+            "instructions": "Structured storytelling data only; templates remain blank.",
+            "max": 20,
+            "layouts": [
+              {
+                "key": "layout_project_project_content_sections_text_block",
+                "name": "text_block",
+                "label": "Text Block",
+                "sub_fields": [
+                  {
+                    "key": "sub_project_project_content_sections_text_block_0_heading",
+                    "name": "heading",
+                    "label": "Heading",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  },
+                  {
+                    "key": "sub_project_project_content_sections_text_block_1_copy",
+                    "name": "copy",
+                    "label": "Content",
+                    "type": "wysiwyg",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  }
+                ]
+              },
+              {
+                "key": "layout_project_project_content_sections_image_block",
+                "name": "image_block",
+                "label": "Image Block",
+                "sub_fields": [
+                  {
+                    "key": "sub_project_project_content_sections_image_block_0_heading",
+                    "name": "heading",
+                    "label": "Heading",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  },
+                  {
+                    "key": "sub_project_project_content_sections_image_block_1_image",
+                    "name": "image",
+                    "label": "Image",
+                    "type": "image",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  },
+                  {
+                    "key": "sub_project_project_content_sections_image_block_2_caption",
+                    "name": "caption",
+                    "label": "Caption",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  }
+                ]
+              },
+              {
+                "key": "layout_project_project_content_sections_quote_block",
+                "name": "quote_block",
+                "label": "Quote Block",
+                "sub_fields": [
+                  {
+                    "key": "sub_project_project_content_sections_quote_block_0_quote",
+                    "name": "quote",
+                    "label": "Quote",
+                    "type": "textarea",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  },
+                  {
+                    "key": "sub_project_project_content_sections_quote_block_1_attributi",
+                    "name": "attribution",
+                    "label": "Attribution",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  }
+                ]
+              },
+              {
+                "key": "layout_project_project_content_sections_video_block",
+                "name": "video_block",
+                "label": "Video Block",
+                "sub_fields": [
+                  {
+                    "key": "sub_project_project_content_sections_video_block_0_heading",
+                    "name": "heading",
+                    "label": "Heading",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  },
+                  {
+                    "key": "sub_project_project_content_sections_video_block_1_video",
+                    "name": "video",
+                    "label": "Video",
+                    "type": "video",
+                    "required": 0,
+                    "instructions": "",
+                    "default_value": ""
+                  }
+                ]
+              }
+            ],
+            "layouts_schema": "text_block | Text Block\n  heading | Heading | text\n  copy | Content | wysiwyg\nimage_block | Image Block\n  heading | Heading | text\n  image | Image | image\n  caption | Caption | text\nquote_block | Quote Block\n  quote | Quote | textarea\n  attribution | Attribution | text\nvideo_block | Video Block\n  heading | Heading | text\n  video | Video | video"
+          },
+          {
+            "key": "field_project_project_relations_tab",
+            "name": "project_relations_tab",
+            "label": "Relationships",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_project_related_services",
             "label": "Related Services",
             "name": "related_services",
             "type": "relationship",
             "required": 0,
-            "instructions": ""
+            "instructions": "Select Service posts."
+          },
+          {
+            "key": "field_project_related_industries",
+            "name": "related_industries",
+            "label": "Related Industries",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Select Industry posts."
+          },
+          {
+            "key": "field_project_related_team_members",
+            "name": "related_team_members",
+            "label": "Project Team",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Select Team posts."
           },
           {
             "key": "field_project_related_case_studies",
@@ -567,9 +1202,53 @@
             "name": "related_case_studies",
             "type": "relationship",
             "required": 0,
-            "instructions": "",
+            "instructions": "Reverse side of Case Study > Related Project. The plugin can synchronize this with related_project.",
             "bidirectional": 1,
             "bidirectional_target": "related_project"
+          },
+          {
+            "key": "field_project_project_publication_tab",
+            "name": "project_publication_tab",
+            "label": "Publication",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_featured",
+            "name": "project_featured",
+            "label": "Featured Project",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_project_project_is_confidential",
+            "name": "project_is_confidential",
+            "label": "Contains Confidential Details",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "Editorial flag only; not access control.",
+            "default_value": "0"
+          },
+          {
+            "key": "field_project_project_primary_cta",
+            "name": "project_primary_cta",
+            "label": "Primary CTA",
+            "type": "link",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_project_project_sort_order",
+            "name": "project_sort_order",
+            "label": "Manual Sort Order",
+            "type": "number",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
           }
         ],
         "_theoct_location_post_types": [
@@ -585,7 +1264,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_project"
+        "_theoct_definition_key": "theoct_field_group_project",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     },
     {
@@ -600,20 +1281,93 @@
       "meta": {
         "_theoct_fields": [
           {
-            "key": "field_case_study_related_project",
-            "label": "Related Project",
-            "name": "related_project",
-            "type": "post_object",
+            "key": "field_case_study_case_context_tab",
+            "name": "case_context_tab",
+            "label": "Client & Context",
+            "type": "tab",
             "required": 0,
-            "instructions": "",
-            "bidirectional": 1,
-            "bidirectional_target": "related_case_studies"
+            "instructions": ""
           },
           {
             "key": "field_case_study_client_name",
             "label": "Client Name",
             "name": "client_name",
             "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_client_logo",
+            "name": "client_logo",
+            "label": "Client Logo",
+            "type": "image",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_summary",
+            "name": "case_study_summary",
+            "label": "Executive Summary",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "max_length": 1200
+          },
+          {
+            "key": "field_case_study_case_study_industry",
+            "name": "case_study_industry",
+            "label": "Industry Context",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_duration",
+            "name": "case_study_duration",
+            "label": "Engagement Duration",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_start_date",
+            "name": "case_study_start_date",
+            "label": "Start Date",
+            "type": "date",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_end_date",
+            "name": "case_study_end_date",
+            "label": "End Date",
+            "type": "date",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_hero",
+            "name": "case_study_hero",
+            "label": "Cover Image",
+            "type": "image",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_visibility",
+            "name": "case_study_visibility",
+            "label": "Publication Status",
+            "type": "select",
+            "required": 0,
+            "instructions": "Editorial status, not a WordPress permissions or access-control rule.",
+            "choices": "draft : Draft\napproved : Approved to Publish\nanonymized : Anonymized\nembargoed : Embargoed",
+            "default_value": "draft"
+          },
+          {
+            "key": "field_case_study_case_problem_tab",
+            "name": "case_problem_tab",
+            "label": "Problem & Approach",
+            "type": "tab",
             "required": 0,
             "instructions": ""
           },
@@ -626,6 +1380,36 @@
             "instructions": ""
           },
           {
+            "key": "field_case_study_goals",
+            "name": "goals",
+            "label": "Project Goals",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 15,
+            "sub_fields": [
+              {
+                "key": "sub_case_study_goals_0_goal",
+                "name": "goal",
+                "label": "Goal",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_goals_1_detail",
+                "name": "detail",
+                "label": "Detail",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "goal | Goal | text | required\ndetail | Detail | textarea"
+          },
+          {
             "key": "field_case_study_approach",
             "label": "Our Approach",
             "name": "approach",
@@ -634,10 +1418,57 @@
             "instructions": ""
           },
           {
+            "key": "field_case_study_implementation_phases",
+            "name": "implementation_phases",
+            "label": "Implementation Phases",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 20,
+            "sub_fields": [
+              {
+                "key": "sub_case_study_implementation_phases_0_phase",
+                "name": "phase",
+                "label": "Phase",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_implementation_phases_1_actions",
+                "name": "actions",
+                "label": "Actions",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_implementation_phases_2_duration",
+                "name": "duration",
+                "label": "Duration",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "phase | Phase | text | required\nactions | Actions | textarea\nduration | Duration | text"
+          },
+          {
             "key": "field_case_study_outcome",
-            "label": "Results and Outcome",
+            "label": "Results & Outcome",
             "name": "outcome",
             "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_evidence_tab",
+            "name": "case_evidence_tab",
+            "label": "Evidence & Results",
+            "type": "tab",
             "required": 0,
             "instructions": ""
           },
@@ -651,21 +1482,114 @@
             "sub_fields": [
               {
                 "key": "field_case_study_results_metrics_metric_label",
-                "label": "Metric Label",
                 "name": "metric_label",
+                "label": "Metric Label",
                 "type": "text",
-                "required": 0,
-                "instructions": ""
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
               },
               {
                 "key": "field_case_study_results_metrics_metric_value",
-                "label": "Metric Value",
                 "name": "metric_value",
+                "label": "Metric Value",
                 "type": "text",
                 "required": 0,
-                "instructions": ""
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_results_metrics_2_baseline",
+                "name": "baseline",
+                "label": "Baseline / Before",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_results_metrics_3_timeframe",
+                "name": "timeframe",
+                "label": "Time Frame",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_results_metrics_4_evidence",
+                "name": "evidence",
+                "label": "Evidence / Method",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
               }
-            ]
+            ],
+            "max": 25,
+            "sub_fields_schema": "metric_label | Metric Label | text | required\nmetric_value | Metric Value | text\nbaseline | Baseline / Before | text\ntimeframe | Time Frame | text\nevidence | Evidence / Method | textarea"
+          },
+          {
+            "key": "field_case_study_case_study_results_gallery",
+            "name": "case_study_results_gallery",
+            "label": "Results Gallery",
+            "type": "gallery",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_report",
+            "name": "case_study_report",
+            "label": "Supporting Report",
+            "type": "file",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_source_url",
+            "name": "case_study_source_url",
+            "label": "Source Reference URL",
+            "type": "url",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_key_takeaways",
+            "name": "case_study_key_takeaways",
+            "label": "Key Takeaways",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 12,
+            "sub_fields": [
+              {
+                "key": "sub_case_study_case_study_key_takeaways_0_takeaway",
+                "name": "takeaway",
+                "label": "Takeaway",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_case_study_case_study_key_takeaways_1_context",
+                "name": "context",
+                "label": "Context",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "takeaway | Takeaway | text | required\ncontext | Context | textarea"
+          },
+          {
+            "key": "field_case_study_case_relations_tab",
+            "name": "case_relations_tab",
+            "label": "Client Feedback & Relationships",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
           },
           {
             "key": "field_case_study_client_testimonial",
@@ -674,6 +1598,109 @@
             "type": "textarea",
             "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_case_study_testimonial_person",
+            "name": "testimonial_person",
+            "label": "Testimonial Author",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_testimonial_role",
+            "name": "testimonial_role",
+            "label": "Testimonial Author Role",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_testimonial_photo",
+            "name": "testimonial_photo",
+            "label": "Testimonial Photo",
+            "type": "image",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_testimonial_permission",
+            "name": "testimonial_permission",
+            "label": "Permission to Use Testimonial",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "Internal editorial confirmation only; obtain actual client consent separately.",
+            "default_value": "0",
+            "show_in_rest": 0
+          },
+          {
+            "key": "field_case_study_related_project",
+            "label": "Related Project",
+            "name": "related_project",
+            "type": "post_object",
+            "required": 0,
+            "instructions": "Authoritative related Project; keep one Project per Case Study.",
+            "bidirectional": 1,
+            "bidirectional_target": "related_case_studies"
+          },
+          {
+            "key": "field_case_study_related_services",
+            "name": "related_services",
+            "label": "Related Services",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Service posts."
+          },
+          {
+            "key": "field_case_study_related_industries",
+            "name": "related_industries",
+            "label": "Related Industries",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Industry posts."
+          },
+          {
+            "key": "field_case_study_case_action_tab",
+            "name": "case_action_tab",
+            "label": "Next Action",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_case_study_case_study_show_cta",
+            "name": "case_study_show_cta",
+            "label": "Enable Case Study CTA",
+            "type": "toggle",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_case_study_case_study_cta",
+            "name": "case_study_cta",
+            "label": "CTA Link",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "case_study_show_cta",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_case_study_case_study_featured",
+            "name": "case_study_featured",
+            "label": "Featured Case Study",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
           }
         ],
         "_theoct_location_post_types": [
@@ -689,7 +1716,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_case_study"
+        "_theoct_definition_key": "theoct_field_group_case_study",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     },
     {
@@ -704,9 +1733,59 @@
       "meta": {
         "_theoct_fields": [
           {
+            "key": "field_industry_industry_overview_tab",
+            "name": "industry_overview_tab",
+            "label": "Industry Overview",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_industry_industry_summary",
             "label": "Industry Summary",
             "name": "industry_summary",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "max_length": 1600
+          },
+          {
+            "key": "field_industry_industry_tagline",
+            "name": "industry_tagline",
+            "label": "Industry Tagline",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "max_length": 150
+          },
+          {
+            "key": "field_industry_industry_icon",
+            "name": "industry_icon",
+            "label": "Industry Icon",
+            "type": "icon",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_hero_image",
+            "name": "industry_hero_image",
+            "label": "Hero Image",
+            "type": "image",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_overview",
+            "name": "industry_overview",
+            "label": "Industry Overview / Opportunity",
+            "type": "wysiwyg",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_target_audience",
+            "name": "industry_target_audience",
+            "label": "Target Clients",
             "type": "textarea",
             "required": 0,
             "instructions": ""
@@ -721,13 +1800,165 @@
             "sub_fields": [
               {
                 "key": "field_industry_industry_challenges_challenge",
-                "label": "Challenge",
                 "name": "challenge",
+                "label": "Challenge",
                 "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_industry_industry_challenges_1_impact",
+                "name": "impact",
+                "label": "Business Impact",
+                "type": "textarea",
                 "required": 0,
-                "instructions": ""
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_industry_industry_challenges_2_solution",
+                "name": "solution",
+                "label": "Typical Solution",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
               }
-            ]
+            ],
+            "max": 20,
+            "sub_fields_schema": "challenge | Challenge | text | required\nimpact | Business Impact | textarea\nsolution | Typical Solution | textarea"
+          },
+          {
+            "key": "field_industry_industry_solutions_tab",
+            "name": "industry_solutions_tab",
+            "label": "Solutions & Capabilities",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_opportunities",
+            "name": "industry_opportunities",
+            "label": "Opportunities",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 15,
+            "sub_fields": [
+              {
+                "key": "sub_industry_industry_opportunities_0_opportunity",
+                "name": "opportunity",
+                "label": "Opportunity",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_industry_industry_opportunities_1_why_it_matters",
+                "name": "why_it_matters",
+                "label": "Why It Matters",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "opportunity | Opportunity | text | required\nwhy_it_matters | Why It Matters | textarea"
+          },
+          {
+            "key": "field_industry_industry_use_cases",
+            "name": "industry_use_cases",
+            "label": "Use Cases",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 18,
+            "sub_fields": [
+              {
+                "key": "sub_industry_industry_use_cases_0_use_case",
+                "name": "use_case",
+                "label": "Use Case",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_industry_industry_use_cases_1_description",
+                "name": "description",
+                "label": "Description",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_industry_industry_use_cases_2_example",
+                "name": "example",
+                "label": "Example",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "use_case | Use Case | text | required\ndescription | Description | textarea\nexample | Example | textarea"
+          },
+          {
+            "key": "field_industry_industry_tech_stack",
+            "name": "industry_tech_stack",
+            "label": "Common Technologies",
+            "type": "tags",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_compliance",
+            "name": "industry_compliance",
+            "label": "Standards & Regulations",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "Informational content only; not a compliance certification."
+          },
+          {
+            "key": "field_industry_industry_key_benefits",
+            "name": "industry_key_benefits",
+            "label": "Benefits",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 16,
+            "sub_fields": [
+              {
+                "key": "sub_industry_industry_key_benefits_0_benefit",
+                "name": "benefit",
+                "label": "Benefit",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_industry_industry_key_benefits_1_details",
+                "name": "details",
+                "label": "Details",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "benefit | Benefit | text | required\ndetails | Details | textarea"
+          },
+          {
+            "key": "field_industry_industry_proof_tab",
+            "name": "industry_proof_tab",
+            "label": "Work & Expertise",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
           },
           {
             "key": "field_industry_related_services",
@@ -735,7 +1966,100 @@
             "name": "related_services",
             "type": "relationship",
             "required": 0,
+            "instructions": "Choose Service posts."
+          },
+          {
+            "key": "field_industry_related_projects",
+            "name": "related_projects",
+            "label": "Related Projects",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Project posts."
+          },
+          {
+            "key": "field_industry_related_case_studies",
+            "name": "related_case_studies",
+            "label": "Related Case Studies",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Case Study posts."
+          },
+          {
+            "key": "field_industry_related_specialists",
+            "name": "related_specialists",
+            "label": "Industry Specialists",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Team posts."
+          },
+          {
+            "key": "field_industry_industry_testimonial",
+            "name": "industry_testimonial",
+            "label": "Industry-Specific Testimonial",
+            "type": "textarea",
+            "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_gallery",
+            "name": "industry_gallery",
+            "label": "Industry Gallery",
+            "type": "gallery",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_action_tab",
+            "name": "industry_action_tab",
+            "label": "Call to Action",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_industry_industry_show_cta",
+            "name": "industry_show_cta",
+            "label": "Enable CTA",
+            "type": "toggle",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_industry_industry_cta_link",
+            "name": "industry_cta_link",
+            "label": "CTA Link",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "industry_show_cta",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_industry_industry_sort_order",
+            "name": "industry_sort_order",
+            "label": "Manual Sort Order",
+            "type": "number",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
+          },
+          {
+            "key": "field_industry_industry_featured",
+            "name": "industry_featured",
+            "label": "Featured Industry",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
           }
         ],
         "_theoct_location_post_types": [
@@ -751,7 +2075,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_industry"
+        "_theoct_definition_key": "theoct_field_group_industry",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     },
     {
@@ -766,12 +2092,21 @@
       "meta": {
         "_theoct_fields": [
           {
+            "key": "field_team_team_identity_tab",
+            "name": "team_identity_tab",
+            "label": "Profile",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_team_job_title",
             "label": "Job Title",
             "name": "job_title",
             "type": "text",
             "required": 0,
-            "instructions": ""
+            "instructions": "",
+            "max_length": 140
           },
           {
             "key": "field_team_professional_bio",
@@ -779,13 +2114,65 @@
             "name": "professional_bio",
             "type": "textarea",
             "required": 0,
+            "instructions": "",
+            "max_length": 1500
+          },
+          {
+            "key": "field_team_team_short_bio",
+            "name": "team_short_bio",
+            "label": "Short Bio",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "max_length": 350
+          },
+          {
+            "key": "field_team_team_headshot",
+            "name": "team_headshot",
+            "label": "Profile Photo",
+            "type": "image",
+            "required": 0,
             "instructions": ""
           },
           {
-            "key": "field_team_linkedin_profile",
-            "label": "LinkedIn Profile URL",
-            "name": "linkedin_profile",
-            "type": "url",
+            "key": "field_team_team_cover_image",
+            "name": "team_cover_image",
+            "label": "Cover Image",
+            "type": "image",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_position_level",
+            "name": "team_position_level",
+            "label": "Seniority",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "choices": "leadership : Leadership\nlead : Lead\nsenior : Senior\nmid : Mid Level\njunior : Junior\nadvisor : Advisor"
+          },
+          {
+            "key": "field_team_team_location",
+            "name": "team_location",
+            "label": "Work Location",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_work_mode",
+            "name": "team_work_mode",
+            "label": "Work Mode",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "choices": "remote : Remote\nhybrid : Hybrid\nonsite : On site"
+          },
+          {
+            "key": "field_team_team_joined_date",
+            "name": "team_joined_date",
+            "label": "Joined Date",
+            "type": "date",
             "required": 0,
             "instructions": ""
           },
@@ -794,6 +2181,213 @@
             "label": "Display Order",
             "name": "display_order",
             "type": "number",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
+          },
+          {
+            "key": "field_team_team_expertise_tab",
+            "name": "team_expertise_tab",
+            "label": "Skills & Experience",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_specialties",
+            "name": "team_specialties",
+            "label": "Specialties",
+            "type": "tags",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_experience_years",
+            "name": "team_experience_years",
+            "label": "Years of Experience",
+            "type": "integer",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "max": 70,
+            "step": 1
+          },
+          {
+            "key": "field_team_team_certifications",
+            "name": "team_certifications",
+            "label": "Certifications / Awards",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 20,
+            "sub_fields": [
+              {
+                "key": "sub_team_team_certifications_0_credential",
+                "name": "credential",
+                "label": "Credential",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_team_team_certifications_1_issuer",
+                "name": "issuer",
+                "label": "Issuer",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_team_team_certifications_2_issued",
+                "name": "issued",
+                "label": "Issue Date",
+                "type": "date",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_team_team_certifications_3_verification_url",
+                "name": "verification_url",
+                "label": "Verification Link",
+                "type": "url",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "credential | Credential | text | required\nissuer | Issuer | text\nissued | Issue Date | date\nverification_url | Verification Link | url"
+          },
+          {
+            "key": "field_team_team_highlights",
+            "name": "team_highlights",
+            "label": "Career Highlights",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 20,
+            "sub_fields": [
+              {
+                "key": "sub_team_team_highlights_0_highlight",
+                "name": "highlight",
+                "label": "Highlight",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_team_team_highlights_1_detail",
+                "name": "detail",
+                "label": "Detail",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "highlight | Highlight | text | required\ndetail | Detail | textarea"
+          },
+          {
+            "key": "field_team_team_links_tab",
+            "name": "team_links_tab",
+            "label": "Contact & Relationships",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_linkedin_profile",
+            "label": "LinkedIn URL",
+            "name": "linkedin_profile",
+            "type": "url",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_social_profiles",
+            "name": "team_social_profiles",
+            "label": "Other Social Profiles",
+            "type": "social_profiles",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_public_email",
+            "name": "team_public_email",
+            "label": "Public Contact Email",
+            "type": "email",
+            "required": 0,
+            "instructions": "Publish only with the team member's consent.",
+            "show_in_rest": 0
+          },
+          {
+            "key": "field_team_team_public_phone",
+            "name": "team_public_phone",
+            "label": "Public Phone",
+            "type": "telephone",
+            "required": 0,
+            "instructions": "",
+            "show_in_rest": 0
+          },
+          {
+            "key": "field_team_team_related_projects",
+            "name": "team_related_projects",
+            "label": "Projects Contributed To",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Project posts."
+          },
+          {
+            "key": "field_team_team_related_services",
+            "name": "team_related_services",
+            "label": "Services Supported",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Service posts."
+          },
+          {
+            "key": "field_team_team_related_industries",
+            "name": "team_related_industries",
+            "label": "Industry Expertise",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Industry posts."
+          },
+          {
+            "key": "field_team_team_settings_tab",
+            "name": "team_settings_tab",
+            "label": "Profile Settings",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_team_team_is_featured",
+            "name": "team_is_featured",
+            "label": "Featured Team Member",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_team_team_allow_public_profile",
+            "name": "team_allow_public_profile",
+            "label": "Allow Public Profile",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "Editorial flag only; does not restrict access.",
+            "default_value": "1"
+          },
+          {
+            "key": "field_team_team_contact_note",
+            "name": "team_contact_note",
+            "label": "Public Contact Note",
+            "type": "textarea",
             "required": 0,
             "instructions": ""
           }
@@ -811,7 +2405,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_team"
+        "_theoct_definition_key": "theoct_field_group_team",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     },
     {
@@ -826,12 +2422,59 @@
       "meta": {
         "_theoct_fields": [
           {
+            "key": "field_pricing_pricing_identity_tab",
+            "name": "pricing_identity_tab",
+            "label": "Plan Identity",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_subtitle",
+            "name": "pricing_subtitle",
+            "label": "Plan Subtitle",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "max_length": 150
+          },
+          {
+            "key": "field_pricing_pricing_description",
+            "name": "pricing_description",
+            "label": "Plan Description",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "max_length": 1000
+          },
+          {
+            "key": "field_pricing_pricing_mode",
+            "name": "pricing_mode",
+            "label": "Pricing Mode",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "choices": "fixed : Fixed Price\nstarting_at : Starting At\ncustom : Custom Quote\nfree : Free",
+            "default_value": "fixed"
+          },
+          {
             "key": "field_pricing_price_amount",
             "label": "Price Amount",
             "name": "price_amount",
             "type": "number",
             "required": 0,
-            "instructions": ""
+            "instructions": "Existing numeric field kept for compatibility; use Pricing Mode to distinguish quote-only plans.",
+            "min": 0,
+            "step": "0.01",
+            "conditional_logic": [
+              [
+                {
+                  "field": "pricing_mode",
+                  "operator": "!=",
+                  "value": "custom"
+                }
+              ]
+            ]
           },
           {
             "key": "field_pricing_currency",
@@ -839,13 +2482,73 @@
             "name": "currency",
             "type": "text",
             "required": 0,
-            "instructions": ""
+            "instructions": "",
+            "max_length": 3,
+            "validation_regex": "^[A-Z]{3}$",
+            "placeholder": "USD",
+            "default_value": "USD"
           },
           {
             "key": "field_pricing_billing_cycle",
             "label": "Billing Cycle",
             "name": "billing_cycle",
             "type": "text",
+            "required": 0,
+            "instructions": "",
+            "placeholder": "monthly / yearly / one-time"
+          },
+          {
+            "key": "field_pricing_billing_period_count",
+            "name": "billing_period_count",
+            "label": "Billing Period Count",
+            "type": "integer",
+            "required": 0,
+            "instructions": "",
+            "min": 1,
+            "step": 1,
+            "default_value": "1"
+          },
+          {
+            "key": "field_pricing_price_disclaimer",
+            "name": "price_disclaimer",
+            "label": "Pricing Disclaimer",
+            "type": "textarea",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_price_compare_at",
+            "name": "price_compare_at",
+            "label": "Previous / Comparison Price",
+            "type": "number",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": "0.01"
+          },
+          {
+            "key": "field_pricing_highlight_plan",
+            "label": "Highlight Plan",
+            "name": "highlight_plan",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_pricing_pricing_badge",
+            "name": "pricing_badge",
+            "label": "Plan Badge",
+            "type": "text",
+            "required": 0,
+            "instructions": "",
+            "placeholder": "Most Popular"
+          },
+          {
+            "key": "field_pricing_pricing_contents_tab",
+            "name": "pricing_contents_tab",
+            "label": "Features & Limits",
+            "type": "tab",
             "required": 0,
             "instructions": ""
           },
@@ -859,13 +2562,179 @@
             "sub_fields": [
               {
                 "key": "field_pricing_plan_features_feature",
-                "label": "Feature",
                 "name": "feature",
+                "label": "Feature",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_pricing_plan_features_1_included",
+                "name": "included",
+                "label": "Included",
+                "type": "true_false",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_pricing_plan_features_2_note",
+                "name": "note",
+                "label": "Clarification",
                 "type": "text",
                 "required": 0,
-                "instructions": ""
+                "instructions": "",
+                "default_value": ""
               }
-            ]
+            ],
+            "max": 60,
+            "sub_fields_schema": "feature | Feature | text | required\nincluded | Included | true_false\nnote | Clarification | text"
+          },
+          {
+            "key": "field_pricing_pricing_limits",
+            "name": "pricing_limits",
+            "label": "Usage Limits",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 30,
+            "sub_fields": [
+              {
+                "key": "sub_pricing_pricing_limits_0_limit_name",
+                "name": "limit_name",
+                "label": "Limit Name",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_pricing_pricing_limits_1_limit_value",
+                "name": "limit_value",
+                "label": "Limit Value",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_pricing_pricing_limits_2_unit",
+                "name": "unit",
+                "label": "Unit",
+                "type": "text",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "limit_name | Limit Name | text | required\nlimit_value | Limit Value | text\nunit | Unit | text"
+          },
+          {
+            "key": "field_pricing_pricing_addons",
+            "name": "pricing_addons",
+            "label": "Optional Add-ons",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 30,
+            "sub_fields": [
+              {
+                "key": "sub_pricing_pricing_addons_0_addon_name",
+                "name": "addon_name",
+                "label": "Add-on Name",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_pricing_pricing_addons_1_price",
+                "name": "price",
+                "label": "Price",
+                "type": "money",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_pricing_pricing_addons_2_details",
+                "name": "details",
+                "label": "Details",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "addon_name | Add-on Name | text | required\nprice | Price | money\ndetails | Details | textarea"
+          },
+          {
+            "key": "field_pricing_pricing_delivery_time",
+            "name": "pricing_delivery_time",
+            "label": "Delivery / Onboarding Time",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_support_level",
+            "name": "pricing_support_level",
+            "label": "Support Level",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "choices": "email : Email\nstandard : Standard\npriority : Priority\ndedicated : Dedicated"
+          },
+          {
+            "key": "field_pricing_pricing_commercial_tab",
+            "name": "pricing_commercial_tab",
+            "label": "Terms & Conversion",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_setup_fee",
+            "name": "pricing_setup_fee",
+            "label": "Setup Fee",
+            "type": "money",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_trial_days",
+            "name": "pricing_trial_days",
+            "label": "Trial Length (Days)",
+            "type": "integer",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
+          },
+          {
+            "key": "field_pricing_pricing_minimum_term",
+            "name": "pricing_minimum_term",
+            "label": "Minimum Term",
+            "type": "text",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_faqs",
+            "name": "pricing_faqs",
+            "label": "Related FAQs",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose FAQ posts."
+          },
+          {
+            "key": "field_pricing_pricing_services",
+            "name": "pricing_services",
+            "label": "Included Services",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Service posts."
           },
           {
             "key": "field_pricing_button_url",
@@ -873,15 +2742,85 @@
             "name": "button_url",
             "type": "url",
             "required": 0,
+            "instructions": "Legacy URL field retained for compatibility."
+          },
+          {
+            "key": "field_pricing_pricing_cta",
+            "name": "pricing_cta",
+            "label": "CTA Link & Label",
+            "type": "link",
+            "required": 0,
             "instructions": ""
           },
           {
-            "key": "field_pricing_highlight_plan",
-            "label": "Featured Plan",
-            "name": "highlight_plan",
-            "type": "true_false",
+            "key": "field_pricing_pricing_show_secondary_cta",
+            "name": "pricing_show_secondary_cta",
+            "label": "Enable Secondary CTA",
+            "type": "toggle",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_pricing_pricing_secondary_cta",
+            "name": "pricing_secondary_cta",
+            "label": "Secondary CTA Link",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "pricing_show_secondary_cta",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_pricing_pricing_footnotes",
+            "name": "pricing_footnotes",
+            "label": "Legal / Billing Footnotes",
+            "type": "textarea",
             "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_order_tab",
+            "name": "pricing_order_tab",
+            "label": "Display Options",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_pricing_pricing_sort_order",
+            "name": "pricing_sort_order",
+            "label": "Manual Sort Order",
+            "type": "number",
+            "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
+          },
+          {
+            "key": "field_pricing_pricing_is_active",
+            "name": "pricing_is_active",
+            "label": "Plan Available",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "1"
+          },
+          {
+            "key": "field_pricing_pricing_internal_notes",
+            "name": "pricing_internal_notes",
+            "label": "Internal Admin Notes",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "Editorial notes only. REST exposure disabled at field level.",
+            "show_in_rest": 0
           }
         ],
         "_theoct_location_post_types": [
@@ -897,7 +2836,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_pricing"
+        "_theoct_definition_key": "theoct_field_group_pricing",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     },
     {
@@ -912,12 +2853,137 @@
       "meta": {
         "_theoct_fields": [
           {
+            "key": "field_faq_faq_question_tab",
+            "name": "faq_question_tab",
+            "label": "Question & Answer",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
             "key": "field_faq_short_answer",
             "label": "Short Answer",
             "name": "short_answer",
             "type": "textarea",
             "required": 0,
+            "instructions": "Short summary; put the full answer in the WordPress content editor.",
+            "max_length": 600
+          },
+          {
+            "key": "field_faq_faq_answer_format",
+            "name": "faq_answer_format",
+            "label": "Answer Format",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "choices": "rich_text : Written Answer\nvideo : Video Answer\nexternal : External Resource",
+            "default_value": "rich_text"
+          },
+          {
+            "key": "field_faq_faq_video",
+            "name": "faq_video",
+            "label": "Video Answer",
+            "type": "video",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "faq_answer_format",
+                  "operator": "==",
+                  "value": "video"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_faq_faq_external_resource",
+            "name": "faq_external_resource",
+            "label": "External Resource",
+            "type": "link",
+            "required": 0,
+            "instructions": "",
+            "conditional_logic": [
+              [
+                {
+                  "field": "faq_answer_format",
+                  "operator": "==",
+                  "value": "external"
+                }
+              ]
+            ]
+          },
+          {
+            "key": "field_faq_faq_attachment",
+            "name": "faq_attachment",
+            "label": "Supporting File",
+            "type": "file",
+            "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_steps",
+            "name": "faq_steps",
+            "label": "Answer Steps",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "max": 20,
+            "sub_fields": [
+              {
+                "key": "sub_faq_faq_steps_0_step_title",
+                "name": "step_title",
+                "label": "Step Title",
+                "type": "text",
+                "required": 1,
+                "instructions": "",
+                "default_value": ""
+              },
+              {
+                "key": "sub_faq_faq_steps_1_step_detail",
+                "name": "step_detail",
+                "label": "Details",
+                "type": "textarea",
+                "required": 0,
+                "instructions": "",
+                "default_value": ""
+              }
+            ],
+            "sub_fields_schema": "step_title | Step Title | text | required\nstep_detail | Details | textarea"
+          },
+          {
+            "key": "field_faq_faq_organization_tab",
+            "name": "faq_organization_tab",
+            "label": "Discovery & Organization",
+            "type": "tab",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_keywords",
+            "name": "faq_keywords",
+            "label": "Search Keywords",
+            "type": "tags",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_audience",
+            "name": "faq_audience",
+            "label": "Audience",
+            "type": "multi_select",
+            "required": 0,
+            "instructions": "",
+            "choices": "prospects : Prospects\nclients : Clients\npartners : Partners\ninternal : Internal"
+          },
+          {
+            "key": "field_faq_faq_difficulty",
+            "name": "faq_difficulty",
+            "label": "Complexity",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "choices": "basic : Basic\nintermediate : Intermediate\nadvanced : Advanced"
           },
           {
             "key": "field_faq_related_services",
@@ -925,7 +2991,31 @@
             "name": "related_services",
             "type": "relationship",
             "required": 0,
-            "instructions": ""
+            "instructions": "Choose Service posts."
+          },
+          {
+            "key": "field_faq_faq_related_projects",
+            "name": "faq_related_projects",
+            "label": "Related Projects",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Project posts."
+          },
+          {
+            "key": "field_faq_faq_related_case_studies",
+            "name": "faq_related_case_studies",
+            "label": "Related Case Studies",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Case Study posts."
+          },
+          {
+            "key": "field_faq_faq_related_pricing",
+            "name": "faq_related_pricing",
+            "label": "Related Pricing Plans",
+            "type": "relationship",
+            "required": 0,
+            "instructions": "Choose Pricing posts."
           },
           {
             "key": "field_faq_display_order",
@@ -933,7 +3023,77 @@
             "name": "display_order",
             "type": "number",
             "required": 0,
+            "instructions": "",
+            "min": 0,
+            "step": 1
+          },
+          {
+            "key": "field_faq_faq_is_featured",
+            "name": "faq_is_featured",
+            "label": "Featured FAQ",
+            "type": "true_false",
+            "required": 0,
+            "instructions": "",
+            "default_value": "0"
+          },
+          {
+            "key": "field_faq_faq_review_tab",
+            "name": "faq_review_tab",
+            "label": "Maintenance & Quality",
+            "type": "tab",
+            "required": 0,
             "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_last_verified",
+            "name": "faq_last_verified",
+            "label": "Last Verified",
+            "type": "date",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_review_due",
+            "name": "faq_review_due",
+            "label": "Review Due Date",
+            "type": "date",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_verified_by",
+            "name": "faq_verified_by",
+            "label": "Verified By",
+            "type": "user",
+            "required": 0,
+            "instructions": "Select a WordPress user responsible for the answer."
+          },
+          {
+            "key": "field_faq_faq_source_url",
+            "name": "faq_source_url",
+            "label": "Source URL",
+            "type": "url",
+            "required": 0,
+            "instructions": ""
+          },
+          {
+            "key": "field_faq_faq_internal_note",
+            "name": "faq_internal_note",
+            "label": "Internal Review Note",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "show_in_rest": 0
+          },
+          {
+            "key": "field_faq_faq_status",
+            "name": "faq_status",
+            "label": "FAQ Workflow Status",
+            "type": "status",
+            "required": 0,
+            "instructions": "Informational field; does not change WordPress post status.",
+            "choices": "draft : Draft\nreview : In Review\napproved : Approved\narchived : Archived",
+            "default_value": "draft"
           }
         ],
         "_theoct_location_post_types": [
@@ -949,7 +3109,9 @@
             }
           ]
         ],
-        "_theoct_definition_key": "theoct_field_group_faq"
+        "_theoct_definition_key": "theoct_field_group_faq",
+        "_theoct_rest_read_capability": "edit_posts",
+        "_theoct_rest_write_capability": "edit_posts"
       }
     }
   ]

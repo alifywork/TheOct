@@ -47,4 +47,5 @@ Industry content is modeled as the `industry` CPT, not duplicated as a project t
 
 ## Existing site safety
 
-The schema imports definition posts with deterministic keys, so imports can be repeated by your plugin. **Preview first**, especially on a site with existing CPTs/taxonomies, to avoid key/rewrite collisions and inadvertent updates. No imported content records are created. No WordPress database connection was available for live activation/testing.
+Import updates definitions with matching keys. Export your current site schema and back up the database before importing over previously edited field groups. This theme still renders no frontend. See `FIELD-GROUPS.md` for field specifications and caveats.
+
